@@ -26,6 +26,7 @@ class SettingsCell: UITableViewCell {
     private let switchButton: UISwitch = {
         let s = UISwitch(frame: .zero)
         s.isHidden = true
+        s.onTintColor = UIColor(r: 71, g: 151, b: 255)
         return s
     }()
     
@@ -37,8 +38,9 @@ class SettingsCell: UITableViewCell {
             switchButton.isHidden = true
             
             switch item.type {
-            case .onOffSwitch:
+            case .onOffSwitch(let isOn):
                 switchButton.isHidden = false
+                switchButton.isOn = isOn
             case .reset:
                 titleLabel.textColor = .red
                 switchButtonWidthConstraint.constant = 0.0

@@ -84,10 +84,9 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
         
-        data[0].append(SettingsItem(title: "Hurtig Spil", type: .onOffSwitch(isOn: false)))
-        data[0].append(SettingsItem(title: "Falsk Drop 1", type: .onOffSwitch(isOn: false)))
-        data[0].append(SettingsItem(title: "Falsk Drop 2", type: .onOffSwitch(isOn: false)))
-        data[0].append(SettingsItem(title: "Normal", type: .onOffSwitch(isOn: false)))
+        for item in opus {
+            data[0].append(SettingsItem(title: item.title, type: .onOffSwitch(isOn: true)))
+        }
     }
     
     override func viewDidLoad() {
@@ -182,6 +181,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension SettingsViewController: SettingsCellDelegate {
     func didSwitch(isOn value: Bool, cell: SettingsItem) {
-        print("Switch on title: \(cell.title)")
+        print("Switch: \(value) title: \(cell.title)")
     }
 }
