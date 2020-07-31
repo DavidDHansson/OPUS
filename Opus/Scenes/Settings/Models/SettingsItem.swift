@@ -17,5 +17,6 @@ struct SettingsItem {
 enum SettingsItemType {
     case onOffSwitch(isOn: Bool)
     case reset
-    case information
+    case aboutMe
+    case help
 }

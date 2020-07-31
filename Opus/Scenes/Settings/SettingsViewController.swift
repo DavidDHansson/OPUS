@@ -17,18 +17,17 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
     var router: (NSObjectProtocol & SettingsRoutingLogic & SettingsDataPassing)?
     
     var data = [
+        [],
         [
-            SettingsItem(title: "Test 1", type: .onOffSwitch(isOn: true)),
-            SettingsItem(title: "Test 2", type: .onOffSwitch(isOn: false)),
-            SettingsItem(title: "Test 3", type: .information)
+            SettingsItem(title: "Om Mig", type: .aboutMe),
+            SettingsItem(title: "Regler", type: .help)
         ],
         [
-            SettingsItem(title: "Test 5", type: .information),
-            SettingsItem(title: "Test 4", type: .reset)
-        ],
+            SettingsItem(title: "Nulstil Indstillinger", type: .reset)
+        ]
     ]
     
-    var headerTitles = ["Opus", "Andet"]
+    var headerTitles = ["Opus", "Andet", "Nulstil"]
     
     public let tableView: UITableView = {
         let t = UITableView(frame: .zero, style: .grouped)
@@ -84,6 +83,11 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        data[0].append(SettingsItem(title: "Hurtig Spil", type: .onOffSwitch(isOn: false)))
+        data[0].append(SettingsItem(title: "Falsk Drop 1", type: .onOffSwitch(isOn: false)))
+        data[0].append(SettingsItem(title: "Falsk Drop 2", type: .onOffSwitch(isOn: false)))
+        data[0].append(SettingsItem(title: "Normal", type: .onOffSwitch(isOn: false)))
     }
     
     override func viewDidLoad() {
@@ -108,6 +112,10 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
+    private func resetSettings() {
+        
     }
     
     // MARK: Do something
@@ -141,7 +149,17 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        print("Tap on s: \(indexPath.section), r: \(indexPath.row)")
+        
+        switch data[indexPath.section][indexPath.row].type {
+        case .onOffSwitch:
+            break
+        case .reset:
+            resetSettings()
+        case .aboutMe:
+            self.router?.navigateToAboutMe()
+        case .help:
+            self.router?.navigateToHelp()
+        }   
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -154,6 +172,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SettingsHeaderView") as? SettingsHeaderView else { return nil }
+        
         let config = SettingsHeaderView.ViewModel(title: headerTitles[section])
         view.configure(config: config)
         return view

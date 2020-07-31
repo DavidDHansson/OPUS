@@ -42,7 +42,7 @@ class SettingsCell: UITableViewCell {
             case .reset:
                 titleLabel.textColor = .red
                 switchButtonWidthConstraint.constant = 0.0
-            case .information:
+            case .aboutMe, .help:
                 titleLabel.textColor = .black
                 switchButtonWidthConstraint.constant = 0.0
             }
