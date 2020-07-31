@@ -14,6 +14,7 @@
 		EB02F1D924D4379F00126731 /* TabBarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1D324D4379F00126731 /* TabBarModels.swift */; };
 		EB02F1DA24D4379F00126731 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1D424D4379F00126731 /* TabBarViewController.swift */; };
 		EB02F1DB24D4379F00126731 /* TabBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1D524D4379F00126731 /* TabBarInteractor.swift */; };
+		EB02F1E724D49FEB00126731 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1E624D49FEB00126731 /* PopupViewController.swift */; };
 		EB03F3A224CDAEA40030F518 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB03F3A124CDAEA40030F518 /* UIButton+Extensions.swift */; };
 		EB03F3AD24CDD76F0030F518 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB03F3A924CDD76F0030F518 /* Roboto-Medium.ttf */; };
 		EB03F3AE24CDD76F0030F518 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB03F3AA24CDD76F0030F518 /* Roboto-Regular.ttf */; };
@@ -66,6 +67,7 @@
 		EB02F1D324D4379F00126731 /* TabBarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModels.swift; sourceTree = "<group>"; };
 		EB02F1D424D4379F00126731 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		EB02F1D524D4379F00126731 /* TabBarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInteractor.swift; sourceTree = "<group>"; };
+		EB02F1E624D49FEB00126731 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		EB03F3A124CDAEA40030F518 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		EB03F3A924CDD76F0030F518 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		EB03F3AA24CDD76F0030F518 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -150,6 +152,14 @@
 			path = Tabbar;
 			sourceTree = "<group>";
 		};
+		EB02F1E524D49FDB00126731 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB02F1E624D49FEB00126731 /* PopupViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EB03F3A624CDD73D0030F518 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +223,7 @@
 				EB0525CB24CC707A0065409A /* AppDelegate.swift */,
 				EB0B216324D0592D0058B7DA /* Managers */,
 				EB0B216A24D063E10058B7DA /* Models */,
+				EB02F1E524D49FDB00126731 /* Views */,
 				EB0525E024CC71940065409A /* Scenes */,
 				EB0525EE24CC76770065409A /* Extensions */,
 				EB03F3A624CDD73D0030F518 /* Resources */,
@@ -442,6 +453,7 @@
 				EB03F3A224CDAEA40030F518 /* UIButton+Extensions.swift in Sources */,
 				EB0525FD24CC7D210065409A /* WelcomeInteractor.swift in Sources */,
 				EB02F1DB24D4379F00126731 /* TabBarInteractor.swift in Sources */,
+				EB02F1E724D49FEB00126731 /* PopupViewController.swift in Sources */,
 				EB0525EA24CC71AF0065409A /* HomeModels.swift in Sources */,
 				EB02F1D624D4379F00126731 /* TabBarPresenter.swift in Sources */,
 				EB0B216724D0639B0058B7DA /* Player.swift in Sources */,
