@@ -92,7 +92,47 @@ public class Player: PlayerProtocol {
         }
     }
     
+    // If the weight is 0.5, the element is added 5 times (0.5 * 10) to the array "options"
+    // Depending on the weight the appropriate amount of elements are added
+    // In the end a random element in the "options" array is picked out
+    // Therefore higher weights gives more occurrences in the array, leading to a higher probability
+    
+    private func getWeightedDrop(from drops: [OpusType]) -> OpusType {
+        var options = [OpusType]()
+        
+        for current in drops {
+            for _ in 0 ..< (Int(current.weight * 10.0)) {
+                options.append(current)
+            }
+        }
+        
+        let index = Int.random(in: 0 ... options.count - 1)
+        return options[index]
+    }
+    
+    private func generateWeightReport(times: Int) {
+        
+        var items = [String]()
+        
+        for _ in 0 ..< times {
+            items.append(getWeightedDrop(from: opus).title)
+        }
+        
+        var counts: [String: Int] = [:]
+        for item in items {
+            counts[item] = (counts[item] ?? 0) + 1
+        }
+        
+        print("\n\n-----Weight Report-----")
+        for (key, value) in counts {
+            print("\(key) occurs \(value) time(s)")
+        }
+        print("\n\n")
+    }
+    
     func generateQueue() {
+        
+//        generateWeightReport(times: 100)
         
         func addInitielBuildUp(withBambam: Bool) -> [Clip] {
             var q = [Clip]()
@@ -126,13 +166,14 @@ public class Player: PlayerProtocol {
         
         clear()
         var q = [Clip]()
+        let type = getWeightedDrop(from: opus)
         
-        switch Int.random(in: 0 ... 2) {
-        case 0:
+        switch type.type {
+        case .quickDrop:
             // -- Quick Drop --
             q.append(Clip(bit: .buildUpFull, stopAfter: Double.random(in: 15 ... 40)))
             q.append(Clip(bit: .drop, stopAfter: 60))
-        case 1:
+        case .slowPart:
             // -- Slow Part--
             q = addInitielBuildUp(withBambam: true)
             
@@ -149,7 +190,7 @@ public class Player: PlayerProtocol {
                 q.append(Clip(bit: .drop, stopAfter: 60))
             }
 
-        case 2:
+        case .slowPartQuickDrop:
             // -- Slow part, Quick drop --
             q = addInitielBuildUp(withBambam: true)
             
@@ -162,12 +203,13 @@ public class Player: PlayerProtocol {
                 q.append(Clip(bit: .slow, stopAfter: Double.random(in: 6 ... 54)))
                 q.append(Clip(bit: .drop, stopAfter: 60))
             }
-            
-        default:
-            return
+        case .normal:
+            // -- Normal --
+            q = addInitielBuildUp(withBambam: true)
+            q.append(Clip(bit: .drop, stopAfter: 60))
         }
 
-        print("\n\n----- Queue -----")
+        print("\n\n----- Queue (type: \(type.title)) -----")
         for part in q {
             print("Part: \(part.bit.rawValue), stops after: \(part.stopAfter)")
         }

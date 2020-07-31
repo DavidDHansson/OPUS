@@ -25,3 +25,24 @@ enum PlayerState {
     case playing
     case disabled
 }
+
+enum OpusTypes {
+    case normal
+    case quickDrop
+    case slowPart
+    case slowPartQuickDrop
+}
+
+struct OpusType {
+    let title: String
+    let description: String
+    let type: OpusTypes
+    let weight: Double
+}
+
+let opus = [
+    OpusType(title: "Normal", description: "", type: .normal, weight: 1),
+    OpusType(title: "Slow", description: "", type: .slowPart, weight: 0.5),
+    OpusType(title: "Slow Quick", description: "", type: .slowPartQuickDrop, weight: 0.4),
+    OpusType(title: "Quick", description: "", type: .quickDrop, weight: 0.2)
+]
