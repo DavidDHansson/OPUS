@@ -27,6 +27,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         s.axis = .vertical
         s.distribution = .equalSpacing
         s.alignment = .center
+        s.spacing = 15
         return s
     }()
     
@@ -39,43 +40,11 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         return l
     }()
     
-    private let buttonStackView: UIStackView = {
-        let s = UIStackView(frame: .zero)
-        s.axis = .vertical
-        s.distribution = .equalSpacing
-        s.alignment = .center
-        return s
-    }()
-    
     private let startButton: UIButton = {
         let b = UIButton(frame: .zero)
         b.setTitle("Start", for: .normal)
         b.setTitleColor(.white, for: .normal)
         b.titleLabel?.font = Font.Roboto.regular.size(22)
-        return b
-    }()
-
-    private let settingsButton: UIButton = {
-        let b = UIButton(frame: .zero)
-        b.setTitle("Indstillinger", for: .normal)
-        b.backgroundColor = .clear
-        b.clipsToBounds = true
-        b.layer.borderWidth = 2
-        b.layer.borderColor = UIColor.black.cgColor
-        b.titleLabel?.font = Font.Roboto.regular.size(22)
-        b.setTitleColor(.black, for: .normal)
-        return b
-    }()
-    
-    private let helpButton: UIButton = {
-        let b = UIButton(frame: .zero)
-        b.setTitle("Hjælp", for: .normal)
-        b.backgroundColor = .clear
-        b.clipsToBounds = true
-        b.layer.borderWidth = 2
-        b.layer.borderColor = UIColor.black.cgColor
-        b.titleLabel?.font = Font.Roboto.regular.size(22)
-        b.setTitleColor(.black, for: .normal)
         return b
     }()
     
@@ -132,11 +101,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         view.backgroundColor = .white
         
         // Add subviews
-        buttonStackView.addArrangedSubview(startButton)
-        buttonStackView.addArrangedSubview(settingsButton)
-        buttonStackView.addArrangedSubview(helpButton)
         stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(buttonStackView)
+        stackView.addArrangedSubview(startButton)
         stackView.addArrangedSubview(playButton)
         view.addSubview(stackView)
         
@@ -157,8 +123,6 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         
         startButton.addTarget(self, action: #selector(start), for: .touchUpInside)
         playButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tooglePlayer)))
-        helpButton.addTarget(self, action: #selector(navigateToWelcomePage), for: .touchUpInside)
-        settingsButton.addTarget(self, action: #selector(settingsTapped), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -171,8 +135,6 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         
         DispatchQueue.main.async {
             let radius = self.startButton.frame.size.height * 0.5
-            self.settingsButton.layer.cornerRadius = radius
-            self.helpButton.layer.cornerRadius = radius
             self.startButton.applyGradient(colors: [UIColor(r: 71, g: 151, b: 255).cgColor, UIColor(r: 0, g: 100, b: 227).cgColor], cornerRadius: radius)
         }
         
@@ -183,31 +145,19 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
-        stackView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.8).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        stackView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.6).isActive = true
+        stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.15).isActive = true
+        titleLabel.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.1).isActive = true
         titleLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
         
-        buttonStackView.translatesAutoresizingMaskIntoConstraints = false
-        buttonStackView.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.35).isActive = true
-        buttonStackView.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 0.8).isActive = true
-        
         startButton.translatesAutoresizingMaskIntoConstraints = false
-        startButton.heightAnchor.constraint(equalTo: buttonStackView.heightAnchor, multiplier: 0.25).isActive = true
-        startButton.widthAnchor.constraint(equalTo: buttonStackView.widthAnchor).isActive = true
-        
-        settingsButton.translatesAutoresizingMaskIntoConstraints = false
-        settingsButton.heightAnchor.constraint(equalTo: buttonStackView.heightAnchor, multiplier: 0.25).isActive = true
-        settingsButton.widthAnchor.constraint(equalTo: buttonStackView.widthAnchor).isActive = true
-        
-        helpButton.translatesAutoresizingMaskIntoConstraints = false
-        helpButton.heightAnchor.constraint(equalTo: buttonStackView.heightAnchor, multiplier: 0.25).isActive = true
-        helpButton.widthAnchor.constraint(equalTo: buttonStackView.widthAnchor).isActive = true
+        startButton.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.13).isActive = true
+        startButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 0.8).isActive = true
         
         playButton.translatesAutoresizingMaskIntoConstraints = false
-        playButton.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.25).isActive = true
+        playButton.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.5).isActive = true
         
     }
     
