@@ -173,7 +173,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
             let radius = self.startButton.frame.size.height * 0.5
             self.settingsButton.layer.cornerRadius = radius
             self.helpButton.layer.cornerRadius = radius
-            self.startButton.applyGradient(colors: [UIColor(r: 28, g: 128, b: 255).cgColor, UIColor(r: 0, g: 100, b: 227).cgColor], cornerRadius: radius)
+            self.startButton.applyGradient(colors: [UIColor(r: 71, g: 151, b: 255).cgColor, UIColor(r: 0, g: 100, b: 227).cgColor], cornerRadius: radius)
         }
         
     }

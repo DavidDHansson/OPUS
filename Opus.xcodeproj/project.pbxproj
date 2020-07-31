@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB02F1CF24D4370E00126731 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1CE24D4370E00126731 /* UIView+Extensions.swift */; };
+		EB02F1D624D4379F00126731 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1D024D4379F00126731 /* TabBarPresenter.swift */; };
+		EB02F1D724D4379F00126731 /* TabBarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1D124D4379F00126731 /* TabBarWorker.swift */; };
+		EB02F1D824D4379F00126731 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1D224D4379F00126731 /* TabBarRouter.swift */; };
+		EB02F1D924D4379F00126731 /* TabBarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1D324D4379F00126731 /* TabBarModels.swift */; };
+		EB02F1DA24D4379F00126731 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1D424D4379F00126731 /* TabBarViewController.swift */; };
+		EB02F1DB24D4379F00126731 /* TabBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1D524D4379F00126731 /* TabBarInteractor.swift */; };
 		EB03F3A224CDAEA40030F518 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB03F3A124CDAEA40030F518 /* UIButton+Extensions.swift */; };
 		EB03F3AD24CDD76F0030F518 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB03F3A924CDD76F0030F518 /* Roboto-Medium.ttf */; };
 		EB03F3AE24CDD76F0030F518 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB03F3AA24CDD76F0030F518 /* Roboto-Regular.ttf */; };
@@ -52,6 +59,13 @@
 /* Begin PBXFileReference section */
 		2B0B6A1E46A809CB0C0DEF67 /* Pods-Opus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Opus.release.xcconfig"; path = "Target Support Files/Pods-Opus/Pods-Opus.release.xcconfig"; sourceTree = "<group>"; };
 		2C72AA8D3EC82F69AB183254 /* Pods-Opus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Opus.debug.xcconfig"; path = "Target Support Files/Pods-Opus/Pods-Opus.debug.xcconfig"; sourceTree = "<group>"; };
+		EB02F1CE24D4370E00126731 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		EB02F1D024D4379F00126731 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
+		EB02F1D124D4379F00126731 /* TabBarWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarWorker.swift; sourceTree = "<group>"; };
+		EB02F1D224D4379F00126731 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
+		EB02F1D324D4379F00126731 /* TabBarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModels.swift; sourceTree = "<group>"; };
+		EB02F1D424D4379F00126731 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		EB02F1D524D4379F00126731 /* TabBarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInteractor.swift; sourceTree = "<group>"; };
 		EB03F3A124CDAEA40030F518 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		EB03F3A924CDD76F0030F518 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		EB03F3AA24CDD76F0030F518 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -121,6 +135,19 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB02F1C124D4362F00126731 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				EB02F1D024D4379F00126731 /* TabBarPresenter.swift */,
+				EB02F1D124D4379F00126731 /* TabBarWorker.swift */,
+				EB02F1D224D4379F00126731 /* TabBarRouter.swift */,
+				EB02F1D324D4379F00126731 /* TabBarModels.swift */,
+				EB02F1D424D4379F00126731 /* TabBarViewController.swift */,
+				EB02F1D524D4379F00126731 /* TabBarInteractor.swift */,
+			);
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		EB03F3A624CDD73D0030F518 /* Resources */ = {
@@ -199,6 +226,7 @@
 		EB0525E024CC71940065409A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EB02F1C124D4362F00126731 /* Tabbar */,
 				EBD4693324CE0BCB00C1D885 /* Settings */,
 				EB0525F124CC7D0A0065409A /* Welcome */,
 				EB0525ED24CC71B30065409A /* Home */,
@@ -225,6 +253,7 @@
 				EB0525EF24CC768E0065409A /* UIColor+Extensions.swift */,
 				EB03F3A124CDAEA40030F518 /* UIButton+Extensions.swift */,
 				EB03F3B124CDD7910030F518 /* UIFont+Extensions.swift */,
+				EB02F1CE24D4370E00126731 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -392,9 +421,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB0525E724CC71AF0065409A /* HomePresenter.swift in Sources */,
+				EB02F1D724D4379F00126731 /* TabBarWorker.swift in Sources */,
+				EB02F1D924D4379F00126731 /* TabBarModels.swift in Sources */,
 				EB03F3BB24CDE0560030F518 /* SwiftyOnboardPage.swift in Sources */,
 				EB0525F924CC7D210065409A /* WelcomeWorker.swift in Sources */,
 				EB03F3B724CDDFDF0030F518 /* SwiftyOnboard.swift in Sources */,
+				EB02F1CF24D4370E00126731 /* UIView+Extensions.swift in Sources */,
 				EBD4693D24CE0BF500C1D885 /* SettingsModels.swift in Sources */,
 				EB0525F824CC7D210065409A /* WelcomePresenter.swift in Sources */,
 				EB0525FA24CC7D210065409A /* WelcomeRouter.swift in Sources */,
@@ -409,11 +441,15 @@
 				EBD4693B24CE0BF500C1D885 /* SettingsWorker.swift in Sources */,
 				EB03F3A224CDAEA40030F518 /* UIButton+Extensions.swift in Sources */,
 				EB0525FD24CC7D210065409A /* WelcomeInteractor.swift in Sources */,
+				EB02F1DB24D4379F00126731 /* TabBarInteractor.swift in Sources */,
 				EB0525EA24CC71AF0065409A /* HomeModels.swift in Sources */,
+				EB02F1D624D4379F00126731 /* TabBarPresenter.swift in Sources */,
 				EB0B216724D0639B0058B7DA /* Player.swift in Sources */,
 				EB0525EB24CC71AF0065409A /* HomeViewController.swift in Sources */,
 				EB0525FB24CC7D210065409A /* WelcomeModels.swift in Sources */,
+				EB02F1DA24D4379F00126731 /* TabBarViewController.swift in Sources */,
 				EB0525E924CC71AF0065409A /* HomeRouter.swift in Sources */,
+				EB02F1D824D4379F00126731 /* TabBarRouter.swift in Sources */,
 				EB03F3B224CDD7910030F518 /* UIFont+Extensions.swift in Sources */,
 				EB0B216924D063B90058B7DA /* PlayerProtocol.swift in Sources */,
 				EB0525FC24CC7D210065409A /* WelcomeViewController.swift in Sources */,
