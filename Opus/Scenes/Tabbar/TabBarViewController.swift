@@ -111,7 +111,7 @@ class TabBarViewController: UITabBarController, TabBarDisplayLogic {
 
         self.viewControllers = controllers
         
-        self.selectedIndex = 0
+        self.selectedIndex = 1
         
         self.tabBar.barTintColor = UIColor(r: 214, g: 231, b: 255)
         self.tabBar.tintColor = UIColor.white
