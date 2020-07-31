@@ -18,6 +18,8 @@ public class Player: PlayerProtocol {
     var queue = [Clip]()
     var queueIndex: Int = 0
     
+    var firstTime: Bool = true
+    
     private func play(bit: Bit) {
         guard let url = Bundle.main.url(forResource: bit.rawValue, withExtension: "mp3") else { return }
         
@@ -164,7 +166,14 @@ public class Player: PlayerProtocol {
                 BuildUpFull, drop
         */
         
-        clear()
+        if firstTime {
+            queueIndex = 0
+            progress = 0.0
+            firstTime = false
+        } else {
+            clear()
+        }
+        
         var q = [Clip]()
         let type = getWeightedDrop(from: opus)
         
