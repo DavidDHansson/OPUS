@@ -41,8 +41,8 @@ struct OpusType {
 }
 
 let opus = [
-    OpusType(title: "Normal", description: "", type: .normal, weight: 1),
-    OpusType(title: "Slow", description: "", type: .slowPart, weight: 0.5),
-    OpusType(title: "Slow Quick", description: "", type: .slowPartQuickDrop, weight: 0.4),
-    OpusType(title: "Quick", description: "", type: .quickDrop, weight: 0.2)
+    OpusType(title: "Normal", description: "Test Normal", type: .normal, weight: 1),
+    OpusType(title: "Slow", description: "Test Slow", type: .slowPart, weight: 0.5),
+    OpusType(title: "Slow Quick", description: "Test Slow quick", type: .slowPartQuickDrop, weight: 0.4),
+    OpusType(title: "Quick", description: "Test Quick", type: .quickDrop, weight: 0.2)
 ]

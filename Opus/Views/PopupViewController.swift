@@ -88,7 +88,7 @@ class PopupViewController: UIViewController {
         
         titleLabel.text = viewModel.title
         descriptionLabel.text = viewModel.description
-        continueButton.setTitle(viewModel.title, for: .normal)
+        continueButton.setTitle(viewModel.buttonText, for: .normal)
         
         switch viewModel.type {
         case .information:

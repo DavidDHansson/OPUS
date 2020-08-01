@@ -8,9 +8,10 @@
 
 import UIKit
 
-@objc protocol SettingsRoutingLogic {
+protocol SettingsRoutingLogic {
     func navigateToHelp()
     func navigateToAboutMe()
+    func navigateToInformation(with opus: OpusType)
 }
 
 protocol SettingsDataPassing {
@@ -34,6 +35,13 @@ class SettingsRouter: NSObject, SettingsRoutingLogic, SettingsDataPassing {
     
     func navigateToAboutMe() {
         
+    }
+    
+    func navigateToInformation(with opusClass: OpusType) {
+        let viewModel = PopupViewController.ViewModel(title: opusClass.title, description: opusClass.description, buttonText: "Forstået", image: nil, type: .information)
+        let destination = PopupViewController(viewModel: viewModel)
+        destination.modalPresentationStyle = .overCurrentContext
+        self.viewController?.tabBarController?.present(destination, animated: true, completion: nil)
     }
 
 }

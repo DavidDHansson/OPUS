@@ -19,11 +19,11 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
     var data = [
         [],
         [
-            SettingsItem(title: "Om Mig", type: .aboutMe),
-            SettingsItem(title: "Regler", type: .help)
+            SettingsItem(title: "Om Mig", type: .aboutMe, opusType: nil),
+            SettingsItem(title: "Regler", type: .help, opusType: nil)
         ],
         [
-            SettingsItem(title: "Nulstil Indstillinger", type: .reset)
+            SettingsItem(title: "Nulstil Indstillinger", type: .reset, opusType: nil)
         ]
     ]
     
@@ -85,7 +85,7 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
         navigationController?.setNavigationBarHidden(true, animated: false)
         
         for item in opus {
-            data[0].append(SettingsItem(title: item.title, type: .onOffSwitch(isOn: true)))
+            data[0].append(SettingsItem(title: item.title, type: .onOffSwitch(isOn: true), opusType: item.type))
         }
     }
     
@@ -149,9 +149,12 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         
-        switch data[indexPath.section][indexPath.row].type {
+        let cell = data[indexPath.section][indexPath.row]
+        
+        switch cell.type {
         case .onOffSwitch:
-            break
+            guard let opusClass = opus.first(where: { $0.type == cell.opusType }) else { return }
+            self.router?.navigateToInformation(with: opusClass)
         case .reset:
             resetSettings()
         case .aboutMe:
