@@ -47,6 +47,7 @@
 		EB8EB12924D57ABF00341F81 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8EB12424D57ABF00341F81 /* SettingsItem.swift */; };
 		EB8EB12A24D57ABF00341F81 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8EB12624D57ABF00341F81 /* SettingsCell.swift */; };
 		EB8EB12B24D57ABF00341F81 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8EB12824D57ABF00341F81 /* SettingsHeaderView.swift */; };
+		EB95DFA024D5823000D065F6 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB95DF9F24D5823000D065F6 /* UIImageView+Extensions.swift */; };
 		EBD4692E24CE09C300C1D885 /* buildUpP3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBD4692924CE09C300C1D885 /* buildUpP3.mp3 */; };
 		EBD4692F24CE09C300C1D885 /* buildup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBD4692A24CE09C300C1D885 /* buildup.mp3 */; };
 		EBD4693024CE09C300C1D885 /* drop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBD4692B24CE09C300C1D885 /* drop.mp3 */; };
@@ -105,6 +106,7 @@
 		EB8EB12424D57ABF00341F81 /* SettingsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		EB8EB12624D57ABF00341F81 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		EB8EB12824D57ABF00341F81 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
+		EB95DF9F24D5823000D065F6 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		EBD4692924CE09C300C1D885 /* buildUpP3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buildUpP3.mp3; sourceTree = "<group>"; };
 		EBD4692A24CE09C300C1D885 /* buildup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buildup.mp3; sourceTree = "<group>"; };
 		EBD4692B24CE09C300C1D885 /* drop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drop.mp3; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				EB03F3A124CDAEA40030F518 /* UIButton+Extensions.swift */,
 				EB03F3B124CDD7910030F518 /* UIFont+Extensions.swift */,
 				EB02F1CE24D4370E00126731 /* UIView+Extensions.swift */,
+				EB95DF9F24D5823000D065F6 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				EB0B216724D0639B0058B7DA /* Player.swift in Sources */,
 				EB0525EB24CC71AF0065409A /* HomeViewController.swift in Sources */,
 				EB0525FB24CC7D210065409A /* WelcomeModels.swift in Sources */,
+				EB95DFA024D5823000D065F6 /* UIImageView+Extensions.swift in Sources */,
 				EB02F1DA24D4379F00126731 /* TabBarViewController.swift in Sources */,
 				EB0525E924CC71AF0065409A /* HomeRouter.swift in Sources */,
 				EB02F1D824D4379F00126731 /* TabBarRouter.swift in Sources */,

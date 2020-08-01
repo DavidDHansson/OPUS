@@ -34,7 +34,16 @@ class SettingsRouter: NSObject, SettingsRoutingLogic, SettingsDataPassing {
     }
     
     func navigateToAboutMe() {
-        
+        let viewModel = PopupViewController.ViewModel(
+            title: "Hej, jeg hedder David",
+            description: "Jeg står bag denne formidable app, jeg håber du sætter pris på den. Tag et kig forbi min hjemmeside. Vi ses.",
+            buttonText: "Besøg min side",
+            image: "david",
+            type: .aboutme
+        )
+        let destination = PopupViewController(viewModel: viewModel)
+        destination.modalPresentationStyle = .overCurrentContext
+        self.viewController?.tabBarController?.present(destination, animated: true, completion: nil)
     }
     
     func navigateToInformation(with opusClass: OpusType) {
