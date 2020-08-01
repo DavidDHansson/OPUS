@@ -14,13 +14,7 @@
 		EB02F1D924D4379F00126731 /* TabBarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1D324D4379F00126731 /* TabBarModels.swift */; };
 		EB02F1DA24D4379F00126731 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1D424D4379F00126731 /* TabBarViewController.swift */; };
 		EB02F1DB24D4379F00126731 /* TabBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1D524D4379F00126731 /* TabBarInteractor.swift */; };
-<<<<<<< HEAD
-		EB02F1DE24D4568F00126731 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1DD24D4568F00126731 /* SettingsCell.swift */; };
-		EB02F1E124D4571200126731 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1E024D4571200126731 /* SettingsItem.swift */; };
-		EB02F1E424D46FFC00126731 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1E324D46FFC00126731 /* SettingsHeaderView.swift */; };
-=======
 		EB02F1E724D49FEB00126731 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1E624D49FEB00126731 /* PopupViewController.swift */; };
->>>>>>> 6143d5fa276719be9f91d99c918787f06a469e33
 		EB03F3A224CDAEA40030F518 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB03F3A124CDAEA40030F518 /* UIButton+Extensions.swift */; };
 		EB03F3AD24CDD76F0030F518 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB03F3A924CDD76F0030F518 /* Roboto-Medium.ttf */; };
 		EB03F3AE24CDD76F0030F518 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB03F3AA24CDD76F0030F518 /* Roboto-Regular.ttf */; };
@@ -50,6 +44,9 @@
 		EB0B216724D0639B0058B7DA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B216624D0639B0058B7DA /* Player.swift */; };
 		EB0B216924D063B90058B7DA /* PlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B216824D063B90058B7DA /* PlayerProtocol.swift */; };
 		EB0B216C24D063FB0058B7DA /* PlayerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B216B24D063FB0058B7DA /* PlayerModels.swift */; };
+		EB8EB12924D57ABF00341F81 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8EB12424D57ABF00341F81 /* SettingsItem.swift */; };
+		EB8EB12A24D57ABF00341F81 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8EB12624D57ABF00341F81 /* SettingsCell.swift */; };
+		EB8EB12B24D57ABF00341F81 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8EB12824D57ABF00341F81 /* SettingsHeaderView.swift */; };
 		EBD4692E24CE09C300C1D885 /* buildUpP3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBD4692924CE09C300C1D885 /* buildUpP3.mp3 */; };
 		EBD4692F24CE09C300C1D885 /* buildup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBD4692A24CE09C300C1D885 /* buildup.mp3 */; };
 		EBD4693024CE09C300C1D885 /* drop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBD4692B24CE09C300C1D885 /* drop.mp3 */; };
@@ -73,13 +70,7 @@
 		EB02F1D324D4379F00126731 /* TabBarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModels.swift; sourceTree = "<group>"; };
 		EB02F1D424D4379F00126731 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		EB02F1D524D4379F00126731 /* TabBarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInteractor.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		EB02F1DD24D4568F00126731 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
-		EB02F1E024D4571200126731 /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
-		EB02F1E324D46FFC00126731 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
-=======
 		EB02F1E624D49FEB00126731 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
->>>>>>> 6143d5fa276719be9f91d99c918787f06a469e33
 		EB03F3A124CDAEA40030F518 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		EB03F3A924CDD76F0030F518 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		EB03F3AA24CDD76F0030F518 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -111,6 +102,9 @@
 		EB0B216624D0639B0058B7DA /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		EB0B216824D063B90058B7DA /* PlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProtocol.swift; sourceTree = "<group>"; };
 		EB0B216B24D063FB0058B7DA /* PlayerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModels.swift; sourceTree = "<group>"; };
+		EB8EB12424D57ABF00341F81 /* SettingsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
+		EB8EB12624D57ABF00341F81 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		EB8EB12824D57ABF00341F81 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
 		EBD4692924CE09C300C1D885 /* buildUpP3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buildUpP3.mp3; sourceTree = "<group>"; };
 		EBD4692A24CE09C300C1D885 /* buildup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buildup.mp3; sourceTree = "<group>"; };
 		EBD4692B24CE09C300C1D885 /* drop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drop.mp3; sourceTree = "<group>"; };
@@ -164,37 +158,12 @@
 			path = Tabbar;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-		EB02F1DC24D4567A00126731 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				EB02F1DD24D4568F00126731 /* SettingsCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		EB02F1DF24D4570700126731 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				EB02F1E024D4571200126731 /* SettingsItem.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		EB02F1E224D46FE100126731 /* Custom views */ = {
-			isa = PBXGroup;
-			children = (
-				EB02F1E324D46FFC00126731 /* SettingsHeaderView.swift */,
-			);
-			path = "Custom views";
-=======
 		EB02F1E524D49FDB00126731 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				EB02F1E624D49FEB00126731 /* PopupViewController.swift */,
 			);
 			path = Views;
->>>>>>> 6143d5fa276719be9f91d99c918787f06a469e33
 			sourceTree = "<group>";
 		};
 		EB03F3A624CDD73D0030F518 /* Resources */ = {
@@ -336,6 +305,30 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		EB8EB12324D57ABF00341F81 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EB8EB12424D57ABF00341F81 /* SettingsItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EB8EB12524D57ABF00341F81 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EB8EB12624D57ABF00341F81 /* SettingsCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		EB8EB12724D57ABF00341F81 /* Custom views */ = {
+			isa = PBXGroup;
+			children = (
+				EB8EB12824D57ABF00341F81 /* SettingsHeaderView.swift */,
+			);
+			path = "Custom views";
+			sourceTree = "<group>";
+		};
 		EBD4692824CE09C300C1D885 /* Music */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,9 +345,9 @@
 		EBD4693324CE0BCB00C1D885 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				EB02F1E224D46FE100126731 /* Custom views */,
-				EB02F1DF24D4570700126731 /* Models */,
-				EB02F1DC24D4567A00126731 /* Cells */,
+				EB8EB12524D57ABF00341F81 /* Cells */,
+				EB8EB12724D57ABF00341F81 /* Custom views */,
+				EB8EB12324D57ABF00341F81 /* Models */,
 				EBD4693424CE0BF500C1D885 /* SettingsPresenter.swift */,
 				EBD4693524CE0BF500C1D885 /* SettingsWorker.swift */,
 				EBD4693624CE0BF500C1D885 /* SettingsRouter.swift */,
@@ -473,7 +466,6 @@
 			files = (
 				EB0525E724CC71AF0065409A /* HomePresenter.swift in Sources */,
 				EB02F1D724D4379F00126731 /* TabBarWorker.swift in Sources */,
-				EB02F1DE24D4568F00126731 /* SettingsCell.swift in Sources */,
 				EB02F1D924D4379F00126731 /* TabBarModels.swift in Sources */,
 				EB03F3BB24CDE0560030F518 /* SwiftyOnboardPage.swift in Sources */,
 				EB0525F924CC7D210065409A /* WelcomeWorker.swift in Sources */,
@@ -487,7 +479,9 @@
 				EB0525CC24CC707A0065409A /* AppDelegate.swift in Sources */,
 				EB0525E824CC71AF0065409A /* HomeWorker.swift in Sources */,
 				EB0B216C24D063FB0058B7DA /* PlayerModels.swift in Sources */,
+				EB8EB12B24D57ABF00341F81 /* SettingsHeaderView.swift in Sources */,
 				EB0525EC24CC71AF0065409A /* HomeInteractor.swift in Sources */,
+				EB8EB12A24D57ABF00341F81 /* SettingsCell.swift in Sources */,
 				EB0525F024CC768E0065409A /* UIColor+Extensions.swift in Sources */,
 				EBD4693F24CE0BF500C1D885 /* SettingsInteractor.swift in Sources */,
 				EBD4693B24CE0BF500C1D885 /* SettingsWorker.swift in Sources */,
@@ -496,7 +490,6 @@
 				EB02F1DB24D4379F00126731 /* TabBarInteractor.swift in Sources */,
 				EB02F1E724D49FEB00126731 /* PopupViewController.swift in Sources */,
 				EB0525EA24CC71AF0065409A /* HomeModels.swift in Sources */,
-				EB02F1E424D46FFC00126731 /* SettingsHeaderView.swift in Sources */,
 				EB02F1D624D4379F00126731 /* TabBarPresenter.swift in Sources */,
 				EB0B216724D0639B0058B7DA /* Player.swift in Sources */,
 				EB0525EB24CC71AF0065409A /* HomeViewController.swift in Sources */,
@@ -504,7 +497,7 @@
 				EB02F1DA24D4379F00126731 /* TabBarViewController.swift in Sources */,
 				EB0525E924CC71AF0065409A /* HomeRouter.swift in Sources */,
 				EB02F1D824D4379F00126731 /* TabBarRouter.swift in Sources */,
-				EB02F1E124D4571200126731 /* SettingsItem.swift in Sources */,
+				EB8EB12924D57ABF00341F81 /* SettingsItem.swift in Sources */,
 				EB03F3B224CDD7910030F518 /* UIFont+Extensions.swift in Sources */,
 				EB0B216924D063B90058B7DA /* PlayerProtocol.swift in Sources */,
 				EB0525FC24CC7D210065409A /* WelcomeViewController.swift in Sources */,
