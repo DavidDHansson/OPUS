@@ -162,7 +162,7 @@ class PopupViewController: UIViewController {
         ignoreButton.topAnchor.constraint(equalTo: popupView.topAnchor, constant: 15).isActive = true
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.heightAnchor.constraint(equalTo: popupView.heightAnchor, multiplier: img ? 0.8 : 0.3).isActive = true
+        stackView.heightAnchor.constraint(equalTo: popupView.heightAnchor, multiplier: img ? 0.8 : 0.5).isActive = true
         stackView.centerYAnchor.constraint(equalTo: popupView.centerYAnchor, constant: -30).isActive = true
         stackView.leadingAnchor.constraint(equalTo: popupView.leadingAnchor, constant: 20).isActive = true
         stackView.trailingAnchor.constraint(equalTo: popupView.trailingAnchor, constant: -20).isActive = true
@@ -194,6 +194,8 @@ class PopupViewController: UIViewController {
         if (showImage ?? true) {
             guard let url = URL(string: "https://4hansson.dk/#/") else { return }
             UIApplication.shared.open(url)
+        } else {
+            closeAction()
         }
     }
     
