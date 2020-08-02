@@ -78,6 +78,12 @@ public class Player: PlayerProtocol {
         let data: [OpusType] = UserDefaults.standard.structArrayData(OpusType.self, forKey: "settings")
         opus = data
         
+        // First timers
+        if opus.isEmpty {
+            opus = standardOpus
+            UserDefaults.standard.setStructArray(opus, forKey: "settings")
+        }
+        
         print("\n--opus, load in home--")
         for i in opus {
             print("\(i.title): \(i.enabled)")

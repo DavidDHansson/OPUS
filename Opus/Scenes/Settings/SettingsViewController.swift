@@ -129,6 +129,11 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
         let data: [OpusType] = UserDefaults.standard.structArrayData(OpusType.self, forKey: "settings")
         opus = data
         
+        // First timers
+        if opus.isEmpty {
+            resetSettings()
+        }
+        
         print("\n--opus, load in settings--")
         for i in opus {
             print("\(i.title): \(i.enabled)")
