@@ -120,16 +120,35 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
     }
     
     private func saveSettings() {
-        UserDefaults.standard.setStructArray(opus, forKey: "settings")
+        DispatchQueue.main.async {
+            UserDefaults.standard.setStructArray(opus, forKey: "settings")
+        }
     }
     
     private func loadSettings() {
         let data: [OpusType] = UserDefaults.standard.structArrayData(OpusType.self, forKey: "settings")
         opus = data
+        
+        print("\n--opus load--")
+        for i in opus {
+            print("\(i.title): \(i.enabled)")
+        }
     }
     
     private func resetSettings() {
+        opus = standardOpus
+        saveSettings()
         
+        // Empty local data array
+        data[0].removeAll(keepingCapacity: false)
+        
+        // Fill array from standard opus
+        for item in standardOpus {
+            data[0].append(SettingsItem(title: item.title, type: .onOffSwitch, opusType: item.type, switchIsOn: item.enabled))
+        }
+        
+        // Reload
+        tableView.reloadData()
     }
     
     // MARK: Do something
@@ -205,10 +224,20 @@ extension SettingsViewController: SettingsCellDelegate {
         guard let newState = data[indexPath.section][indexPath.row].switchIsOn else { return }
         data[indexPath.section][indexPath.row].switchIsOn = !newState
         
+        print("\n--Local data save--")
+        for i in data[indexPath.section] {
+            print("\(i.title): \(String(describing: i.switchIsOn))")
+        }
+        
         // Update global opus Array
         let item = data[indexPath.section][indexPath.row]
         guard let index = opus.firstIndex(where: { $0.type ==  item.opusType }) else { return }
         opus[index].enabled = !newState
+        
+        print("\n--Opus data save--")
+        for i in opus {
+            print("\(i.title): \(i.enabled)")
+        }
         
         // Save to disk
         saveSettings()
