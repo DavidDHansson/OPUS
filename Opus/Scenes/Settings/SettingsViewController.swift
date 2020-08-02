@@ -19,11 +19,11 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
     var data = [
         [],
         [
-            SettingsItem(title: "Om Mig", type: .aboutMe, opusType: nil),
-            SettingsItem(title: "Regler", type: .help, opusType: nil)
+            SettingsItem(title: "Om Mig", type: .aboutMe, opusType: nil, switchIsOn: false),
+            SettingsItem(title: "Regler", type: .help, opusType: nil, switchIsOn: false)
         ],
         [
-            SettingsItem(title: "Nulstil Indstillinger", type: .reset, opusType: nil)
+            SettingsItem(title: "Nulstil Indstillinger", type: .reset, opusType: nil, switchIsOn: false)
         ]
     ]
     
@@ -83,9 +83,16 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
+
+        // Load opus
+        loadSettings()
         
+        // Empty array before filling it
+        data[0].removeAll(keepingCapacity: false)
+        
+        // Fill array from opus array
         for item in opus {
-            data[0].append(SettingsItem(title: item.title, type: .onOffSwitch(isOn: true), opusType: item.type))
+            data[0].append(SettingsItem(title: item.title, type: .onOffSwitch, opusType: item.type, switchIsOn: item.enabled))
         }
     }
     
@@ -102,7 +109,6 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
         // Setup Tableview
         tableView.delegate = self
         tableView.dataSource = self
-        
     }
     
     func defineLayout() {
@@ -111,6 +117,15 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
+    private func saveSettings() {
+        UserDefaults.standard.setStructArray(opus, forKey: "settings")
+    }
+    
+    private func loadSettings() {
+        let data: [OpusType] = UserDefaults.standard.structArrayData(OpusType.self, forKey: "settings")
+        opus = data
     }
     
     private func resetSettings() {
@@ -142,6 +157,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as? SettingsCell else { fatalError() }
         let cellData = data[indexPath.section][indexPath.row]
         cell.data = cellData
+        cell.index = indexPath
         cell.delegate = self
         return cell
     }
@@ -183,7 +199,18 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension SettingsViewController: SettingsCellDelegate {
-    func didSwitch(isOn value: Bool, cell: SettingsItem) {
-        print("Switch: \(value) title: \(cell.title)")
+    func didSwitch(isOn value: Bool, indexPath: IndexPath) {
+        
+        // Update local data array
+        guard let newState = data[indexPath.section][indexPath.row].switchIsOn else { return }
+        data[indexPath.section][indexPath.row].switchIsOn = !newState
+        
+        // Update global opus Array
+        let item = data[indexPath.section][indexPath.row]
+        guard let index = opus.firstIndex(where: { $0.type ==  item.opusType }) else { return }
+        opus[index].enabled = !newState
+        
+        // Save to disk
+        saveSettings()
     }
 }

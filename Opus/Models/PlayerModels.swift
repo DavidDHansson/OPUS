@@ -26,23 +26,26 @@ enum PlayerState {
     case disabled
 }
 
-enum OpusTypes {
+enum OpusTypes: String, Codable {
     case normal
     case quickDrop
     case slowPart
     case slowPartQuickDrop
 }
 
-struct OpusType {
+struct OpusType: Codable {
     let title: String
     let description: String
     let type: OpusTypes
     let weight: Double
+    var enabled: Bool
 }
 
-let opus = [
-    OpusType(title: "Normal", description: "Test Normal", type: .normal, weight: 1),
-    OpusType(title: "Slow", description: "Test Slow", type: .slowPart, weight: 0.5),
-    OpusType(title: "Slow Quick", description: "Test Slow quick", type: .slowPartQuickDrop, weight: 0.4),
-    OpusType(title: "Quick", description: "Test Quick", type: .quickDrop, weight: 0.2)
+var opus = [OpusType]()
+
+let standardOpus = [
+    OpusType(title: "Normal", description: "Test Normal", type: .normal, weight: 1, enabled: true),
+    OpusType(title: "Slow", description: "Test Slow", type: .slowPart, weight: 0.5, enabled: true),
+    OpusType(title: "Slow Quick", description: "Test Slow quick", type: .slowPartQuickDrop, weight: 0.4, enabled: true),
+    OpusType(title: "Quick", description: "Test Quick", type: .quickDrop, weight: 0.2, enabled: true)
 ]

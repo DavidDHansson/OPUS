@@ -14,4 +14,5 @@ protocol PlayerProtocol {
     func unPause()
     func setup()
     func start()
+    func loadSettings()
 }

@@ -10,10 +10,11 @@ struct SettingsItem {
     let title: String
     let type: SettingsItemType
     let opusType: OpusTypes?
+    var switchIsOn: Bool?
 }
 
 enum SettingsItemType {
-    case onOffSwitch(isOn: Bool)
+    case onOffSwitch
     case reset
     case aboutMe
     case help

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SettingsCellDelegate: class {
-    func didSwitch(isOn value: Bool, cell: SettingsItem)
+    func didSwitch(isOn value: Bool, indexPath: IndexPath)
 }
 
 class SettingsCell: UITableViewCell {
@@ -38,9 +38,10 @@ class SettingsCell: UITableViewCell {
             switchButton.isHidden = true
             
             switch item.type {
-            case .onOffSwitch(let isOn):
+            case .onOffSwitch:
+                guard let state = item.switchIsOn else { return }
                 switchButton.isHidden = false
-                switchButton.isOn = isOn
+                switchButton.isOn = state
             case .reset:
                 titleLabel.textColor = .red
                 switchButtonWidthConstraint.constant = 0.0
@@ -51,6 +52,8 @@ class SettingsCell: UITableViewCell {
             
         }
     }
+    
+    var index: IndexPath?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -81,9 +84,9 @@ class SettingsCell: UITableViewCell {
         
     }
     
-    @objc private func didSwitch(sender: UISwitch) {
-        guard let cell = data else { return }
-        delegate?.didSwitch(isOn: sender.isOn, cell: cell)
+    @objc private func didSwitch(isOn value: Bool, indexPath: IndexPath) {
+        guard let indexUn = index else { return }
+        delegate?.didSwitch(isOn: value, indexPath: indexUn)
     }
 
     required init?(coder: NSCoder) {

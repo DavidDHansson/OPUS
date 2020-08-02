@@ -48,6 +48,10 @@ public class Player: PlayerProtocol {
     }
     
     func setup() {
+        
+        // Load saved opus
+        loadSettings()
+        
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
@@ -68,6 +72,10 @@ public class Player: PlayerProtocol {
         state = .disabled
         player.volume = 1
         player.stop()
+    }
+    
+    func loadSettings() {
+        
     }
     
     @objc private func tick() {
@@ -175,6 +183,10 @@ public class Player: PlayerProtocol {
         }
         
         var q = [Clip]()
+        
+        // Load saved settings
+//        loadSettings()
+        
         let type = getWeightedDrop(from: opus)
         
         switch type.type {
