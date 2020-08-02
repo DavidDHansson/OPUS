@@ -8,8 +8,10 @@
 
 import UIKit
 
-@objc protocol SettingsRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+protocol SettingsRoutingLogic {
+    func navigateToHelp()
+    func navigateToAboutMe()
+    func navigateToInformation(with opus: OpusType)
 }
 
 protocol SettingsDataPassing {
@@ -20,34 +22,35 @@ class SettingsRouter: NSObject, SettingsRoutingLogic, SettingsDataPassing {
     weak var viewController: SettingsViewController?
     var dataStore: SettingsDataStore?
     
-    // MARK: Routing
-    
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
-    //{
-    //  if let segue = segue {
-    //    let destinationVC = segue.destination as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //  } else {
-    //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-    //  }
-    //}
-    
     // MARK: Navigation
     
-    //func navigateToSomewhere(source: SettingsViewController, destination: SomewhereViewController)
-    //{
-    //  source.show(destination, sender: nil)
-    //}
+    func navigateToHelp() {
+        let vc = WelcomeViewController()
+        
+        let destination = UINavigationController(rootViewController: vc)
+        destination.modalPresentationStyle = .overFullScreen
+        
+        viewController?.present(destination, animated: true)
+    }
     
-    // MARK: Passing data
+    func navigateToAboutMe() {
+        let viewModel = PopupViewController.ViewModel(
+            title: "Hej, jeg hedder David",
+            description: "Jeg står bag denne formidable app, jeg håber du sætter pris på den. Tag et kig forbi min hjemmeside. Vi ses.",
+            buttonText: "Besøg min side",
+            image: "david",
+            type: .aboutme
+        )
+        let destination = PopupViewController(viewModel: viewModel)
+        destination.modalPresentationStyle = .overCurrentContext
+        self.viewController?.tabBarController?.present(destination, animated: true, completion: nil)
+    }
     
-    //func passDataToSomewhere(source: SettingsDataStore, destination: inout SomewhereDataStore)
-    //{
-    //  destination.name = source.name
-    //}
+    func navigateToInformation(with opusClass: OpusType) {
+        let viewModel = PopupViewController.ViewModel(title: opusClass.title, description: opusClass.description, buttonText: "Forstået", image: nil, type: .information)
+        let destination = PopupViewController(viewModel: viewModel)
+        destination.modalPresentationStyle = .overCurrentContext
+        self.viewController?.tabBarController?.present(destination, animated: true, completion: nil)
+    }
+
 }

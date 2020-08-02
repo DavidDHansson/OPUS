@@ -64,7 +64,6 @@ class PopupViewController: UIViewController {
     private let imageView: UIImageView = {
         let i = UIImageView(frame: .zero)
         i.contentMode = .scaleAspectFit
-        i.clipsToBounds = true
         return i
     }()
     
@@ -88,7 +87,7 @@ class PopupViewController: UIViewController {
         
         titleLabel.text = viewModel.title
         descriptionLabel.text = viewModel.description
-        continueButton.setTitle(viewModel.title, for: .normal)
+        continueButton.setTitle(viewModel.buttonText, for: .normal)
         
         switch viewModel.type {
         case .information:
@@ -98,7 +97,8 @@ class PopupViewController: UIViewController {
             showImage = true
             imageView.isHidden = false
             guard let img = viewModel.image else { return }
-            imageView.image = UIImage(named: img)
+            
+            imageView.image = UIImage(named: img)?.withRoundedCorners(radius: 80)
         }   
     }
     
@@ -136,7 +136,7 @@ class PopupViewController: UIViewController {
         ignoreButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeAction)))
         blurView.isUserInteractionEnabled = true
         blurView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeAction)))
-        continueButton.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
+        continueButton.addTarget(self, action: #selector(continueAction), for: .touchUpInside)
     }
     
     func defineLayout() {
@@ -162,13 +162,13 @@ class PopupViewController: UIViewController {
         ignoreButton.topAnchor.constraint(equalTo: popupView.topAnchor, constant: 15).isActive = true
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.heightAnchor.constraint(equalTo: popupView.heightAnchor, multiplier: img ? 0.6 : 0.3).isActive = true
+        stackView.heightAnchor.constraint(equalTo: popupView.heightAnchor, multiplier: img ? 0.8 : 0.3).isActive = true
         stackView.centerYAnchor.constraint(equalTo: popupView.centerYAnchor, constant: -30).isActive = true
         stackView.leadingAnchor.constraint(equalTo: popupView.leadingAnchor, constant: 20).isActive = true
         stackView.trailingAnchor.constraint(equalTo: popupView.trailingAnchor, constant: -20).isActive = true
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: img ? 0.1 : 0.5).isActive = true
+        titleLabel.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: img ? 0.2 : 0.5).isActive = true
         titleLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -188,6 +188,13 @@ class PopupViewController: UIViewController {
     
     @objc private func closeAction() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc private func continueAction() {
+        if (showImage ?? true) {
+            guard let url = URL(string: "https://4hansson.dk/#/") else { return }
+            UIApplication.shared.open(url)
+        }
     }
     
     required init?(coder: NSCoder) {

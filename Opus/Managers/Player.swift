@@ -48,6 +48,10 @@ public class Player: PlayerProtocol {
     }
     
     func setup() {
+        
+        // Load saved opus
+        loadSettings()
+        
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
@@ -68,6 +72,16 @@ public class Player: PlayerProtocol {
         state = .disabled
         player.volume = 1
         player.stop()
+    }
+    
+    func loadSettings() {
+        let data: [OpusType] = UserDefaults.standard.structArrayData(OpusType.self, forKey: "settings")
+        opus = data
+        
+        print("\n--opus, load in home--")
+        for i in opus {
+            print("\(i.title): \(i.enabled)")
+        }
     }
     
     @objc private func tick() {
@@ -100,9 +114,17 @@ public class Player: PlayerProtocol {
     // Therefore higher weights gives more occurrences in the array, leading to a higher probability
     
     private func getWeightedDrop(from drops: [OpusType]) -> OpusType {
-        var options = [OpusType]()
         
-        for current in drops {
+        var options = [OpusType]()
+        let availableOpus = drops.filter({ $0.enabled == true })
+        
+        print("\n\n--Available in Getweighteddrop--")
+        for i in availableOpus {
+            print("\(i.title): \(i.enabled)")
+        }
+        print("----\n")
+        
+        for current in availableOpus {
             for _ in 0 ..< (Int(current.weight * 10.0)) {
                 options.append(current)
             }
@@ -134,6 +156,7 @@ public class Player: PlayerProtocol {
     
     func generateQueue() {
         
+        // For analyzing opus weights
 //        generateWeightReport(times: 100)
         
         func addInitielBuildUp(withBambam: Bool) -> [Clip] {
@@ -166,6 +189,7 @@ public class Player: PlayerProtocol {
                 BuildUpFull, drop
         */
         
+        // Bug fix, can't set player.volume first time
         if firstTime {
             queueIndex = 0
             progress = 0.0
@@ -174,9 +198,16 @@ public class Player: PlayerProtocol {
             clear()
         }
         
+        // Load saved settings
+        loadSettings()
+        
+        // Local queue array
         var q = [Clip]()
+        
+        // Get the opus type
         let type = getWeightedDrop(from: opus)
         
+        // Fill queue
         switch type.type {
         case .quickDrop:
             // -- Quick Drop --
