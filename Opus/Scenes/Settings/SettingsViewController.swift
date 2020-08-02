@@ -129,7 +129,7 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
         let data: [OpusType] = UserDefaults.standard.structArrayData(OpusType.self, forKey: "settings")
         opus = data
         
-        print("\n--opus load--")
+        print("\n--opus, load in settings--")
         for i in opus {
             print("\(i.title): \(i.enabled)")
         }
@@ -224,7 +224,7 @@ extension SettingsViewController: SettingsCellDelegate {
         guard let newState = data[indexPath.section][indexPath.row].switchIsOn else { return }
         data[indexPath.section][indexPath.row].switchIsOn = !newState
         
-        print("\n--Local data save--")
+        print("\n--Local data, save--")
         for i in data[indexPath.section] {
             print("\(i.title): \(String(describing: i.switchIsOn))")
         }
@@ -234,7 +234,7 @@ extension SettingsViewController: SettingsCellDelegate {
         guard let index = opus.firstIndex(where: { $0.type ==  item.opusType }) else { return }
         opus[index].enabled = !newState
         
-        print("\n--Opus data save--")
+        print("\n--Opus data, save--")
         for i in opus {
             print("\(i.title): \(i.enabled)")
         }
