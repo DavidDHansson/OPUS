@@ -137,7 +137,6 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
             let radius = self.startButton.frame.size.height * 0.5
             self.startButton.applyGradient(colors: [UIColor(r: 71, g: 151, b: 255).cgColor, UIColor(r: 0, g: 100, b: 227).cgColor], cornerRadius: radius)
         }
-        
     }
     
     func defineLayout() {
@@ -153,7 +152,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         titleLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
         
         startButton.translatesAutoresizingMaskIntoConstraints = false
-        startButton.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.13).isActive = true
+        startButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
         startButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 0.8).isActive = true
         
         playButton.translatesAutoresizingMaskIntoConstraints = false

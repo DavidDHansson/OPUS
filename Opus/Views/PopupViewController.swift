@@ -48,7 +48,6 @@ class PopupViewController: UIViewController {
     private let stackView: UIStackView = {
         let s = UIStackView(frame: .zero)
         s.axis = .vertical
-        s.distribution = .equalSpacing
         s.alignment = .center
         return s
     }()
@@ -150,7 +149,7 @@ class PopupViewController: UIViewController {
         blurView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
         popupView.translatesAutoresizingMaskIntoConstraints = false
-        popupView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6).isActive = true
+        popupView.heightAnchor.constraint(equalToConstant: 350).isActive = true
         popupView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25).isActive = true
         popupView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25).isActive = true
         popupView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -168,7 +167,7 @@ class PopupViewController: UIViewController {
         stackView.trailingAnchor.constraint(equalTo: popupView.trailingAnchor, constant: -20).isActive = true
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: img ? 0.2 : 0.5).isActive = true
+        titleLabel.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: img ? 0.2 : 0.2).isActive = true
         titleLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -176,13 +175,13 @@ class PopupViewController: UIViewController {
         
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
-        descriptionLabel.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: img ? 0.3 : 0.5).isActive = true
+        descriptionLabel.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: img ? 0.3 : 0.8).isActive = true
         
         continueButton.translatesAutoresizingMaskIntoConstraints = false
         continueButton.bottomAnchor.constraint(equalTo: popupView.bottomAnchor, constant: -20).isActive = true
         continueButton.centerXAnchor.constraint(equalTo: popupView.centerXAnchor).isActive = true
         continueButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 0.8).isActive = true
-        continueButton.heightAnchor.constraint(equalTo: popupView.heightAnchor, multiplier: 0.1).isActive = true
+        continueButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
         
     }
     
