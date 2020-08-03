@@ -23,7 +23,7 @@ enum Welcome {
     struct OnBoardPage {
         let title: String
         let description: String
-        let image: String
+        let image: String?
     }
     
 }

@@ -17,7 +17,12 @@ class WelcomeViewController: UIViewController, WelcomeDisplayLogic {
     var router: (NSObjectProtocol & WelcomeRoutingLogic & WelcomeDataPassing)?
     
     var swiftyOnboard: SwiftyOnboard!
-    let pages = [Welcome.OnBoardPage(title: "1. Del terninger ud", description: "Jo flere terninger - Jo sjovere \nDet anbefalet at have en terning for hver tredje person", image: "play"), Welcome.OnBoardPage(title: "2. Klik på \"Start\" i appen", description: "(Husk at tage et besøg forbi indstillingerne)", image: "pause"), Welcome.OnBoardPage(title: "3. Slå med terningerne", description: "1 - Send terningen til højre \n2 - Send terningen til venstre \n6 - Send terningen til en valgfri", image: "pause"), Welcome.OnBoardPage(title: "4. BUND!", description: "Når musiken dropper, så bunder alle dem med en terning tilbage", image: "pause")]
+    let pages = [
+        Welcome.OnBoardPage(title: "1. Del terninger ud", description: "Jo flere terninger - Jo sjovere \nDet anbefalet at have en terning for hver tredje person", image: "dice"),
+        Welcome.OnBoardPage(title: "2. Klik på \"Start\" i appen", description: "(Husk at tage et besøg forbi indstillingerne)", image: nil),
+        Welcome.OnBoardPage(title: "3. Slå med terningerne", description: "1 - Send terningen til højre \n2 - Send terningen til venstre \n6 - Send terningen til en valgfri", image: "multi"),
+        Welcome.OnBoardPage(title: "4. BUND!", description: "Når musiken dropper, så bunder alle dem med en terning tilbage.", image: "users")
+    ]
     
     // MARK: Object lifecycle
     
@@ -105,9 +110,16 @@ extension WelcomeViewController: SwiftyOnboardDataSource {
     func swiftyOnboardPageForIndex(_ swiftyOnboard: SwiftyOnboard, index: Int) -> SwiftyOnboardPage? {
         let page = SwiftyOnboardPage()
         let current = pages[index]
+        
         page.titleLabel.text = current.title
         page.descriptionLabel.text = current.description
-        page.imageView.image = UIImage(named: current.image)
+        
+        if let img = current.image {
+            page.imageView.image = UIImage(named: img)
+        } else {
+            page.imageView.image = nil
+        }
+        
         return page
     }
     

@@ -42,7 +42,6 @@ open class SwiftyOnboardPage: UIView {
     public var imageView: UIImageView = {
         let i = UIImageView(frame: .zero)
         i.contentMode = .scaleAspectFit
-        i.image = UIImage(named: "play")
         return i
     }()
     
