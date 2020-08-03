@@ -44,6 +44,7 @@
 		EB0B216724D0639B0058B7DA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B216624D0639B0058B7DA /* Player.swift */; };
 		EB0B216924D063B90058B7DA /* PlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B216824D063B90058B7DA /* PlayerProtocol.swift */; };
 		EB0B216C24D063FB0058B7DA /* PlayerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B216B24D063FB0058B7DA /* PlayerModels.swift */; };
+		EB70518224D840FE00FD5DF2 /* SettingsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB70518124D840FE00FD5DF2 /* SettingsFooterView.swift */; };
 		EB8EB12924D57ABF00341F81 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8EB12424D57ABF00341F81 /* SettingsItem.swift */; };
 		EB8EB12A24D57ABF00341F81 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8EB12624D57ABF00341F81 /* SettingsCell.swift */; };
 		EB8EB12B24D57ABF00341F81 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8EB12824D57ABF00341F81 /* SettingsHeaderView.swift */; };
@@ -104,6 +105,7 @@
 		EB0B216624D0639B0058B7DA /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		EB0B216824D063B90058B7DA /* PlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProtocol.swift; sourceTree = "<group>"; };
 		EB0B216B24D063FB0058B7DA /* PlayerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModels.swift; sourceTree = "<group>"; };
+		EB70518124D840FE00FD5DF2 /* SettingsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFooterView.swift; sourceTree = "<group>"; };
 		EB8EB12424D57ABF00341F81 /* SettingsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		EB8EB12624D57ABF00341F81 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		EB8EB12824D57ABF00341F81 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				EB8EB12824D57ABF00341F81 /* SettingsHeaderView.swift */,
+				EB70518124D840FE00FD5DF2 /* SettingsFooterView.swift */,
 			);
 			path = "Custom views";
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 			files = (
 				EB95DFA424D598D100D065F6 /* UserDefaults+Extensions.swift in Sources */,
 				EB0525E724CC71AF0065409A /* HomePresenter.swift in Sources */,
+				EB70518224D840FE00FD5DF2 /* SettingsFooterView.swift in Sources */,
 				EB02F1D724D4379F00126731 /* TabBarWorker.swift in Sources */,
 				EB02F1D924D4379F00126731 /* TabBarModels.swift in Sources */,
 				EB03F3BB24CDE0560030F518 /* SwiftyOnboardPage.swift in Sources */,

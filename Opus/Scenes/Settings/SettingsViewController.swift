@@ -37,6 +37,7 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
         t.contentInset.top = 16
         t.register(SettingsCell.self, forCellReuseIdentifier: "SettingsCell")
         t.register(SettingsHeaderView.self, forHeaderFooterViewReuseIdentifier: "SettingsHeaderView")
+        t.register(SettingsFooterView.self, forHeaderFooterViewReuseIdentifier: "SettingsFooterView")
         return t
     }()
     
@@ -218,6 +219,24 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         let config = SettingsHeaderView.ViewModel(title: headerTitles[section])
         view.configure(config: config)
         return view
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if section == data.count - 1 {
+            guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SettingsFooterView") as? SettingsFooterView else { return nil }
+
+            let v = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+            let n = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String
+            
+            view.configure(text: "Version: \(v ?? "0") - \(n ?? "Opus") - David Hansson\n\nTak til Eric Prydz - Opus (2015) \nOg skud ud til dranker gutterne")
+            return view
+        }
+        
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return section == data.count - 1 ? (44 * 3) : 0
     }
     
 }
