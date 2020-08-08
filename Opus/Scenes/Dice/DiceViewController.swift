@@ -87,7 +87,6 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
     func addDice() {
         
         let viewFrame = UIScreen.main.bounds
-        
         var diceTransform = CATransform3DIdentity
 
         // 1
@@ -150,20 +149,68 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
     
     @objc func viewTransform(sender: UIPanGestureRecognizer) {
         
+        // Calculates the movement, based on the varible "angle"
         let point = sender.translation(in: diceView)
         let angleX = angle.x + (point.x / 60)
         let angleY = angle.y + (point.y / 60)
         
+        // Moves the dice
         var transform = CATransform3DIdentity
         transform.m34 = -1 / 500
         transform = CATransform3DRotate(transform, angleX, 0, 1, 0)
         transform = CATransform3DRotate(transform, angleY, 1, 0, 0)
         diceView.layer.sublayerTransform = transform
         
+        // Saves the angle
         if sender.state == .ended {
             angle.x = angleX
             angle.y = angleY
         }
+    }
+    
+    func show(diceFace face: Int) {
+        
+        var transform = CATransform3DIdentity
+        transform.m34 = -1 / 500
+        
+        var angleX = angle.x
+        var angleY = angle.y
+        
+        switch face {
+        case 1:
+            print("-1-")
+            angleX = 0
+            angleY = 0
+        case 2:
+            print("-2-")
+            angleX = (-CGFloat.pi / 2)
+            angleY = 0
+        case 3:
+            print("-3-")
+            angleX = 0
+            angleY = (CGFloat.pi / 2)
+        case 4:
+            print("-4-")
+            angleX = 0
+            angleY = (-CGFloat.pi / 2)
+        case 5:
+            print("-5-")
+            angleX = (CGFloat.pi / 2)
+            angleY = (CGFloat.pi / 2)
+        case 6:
+            print("-6-")
+            angleX = CGFloat.pi
+            angleY = 0
+        default: break
+        }
+        
+        transform = CATransform3DRotate(transform, angleX, 0, 1, 0)
+        transform = CATransform3DRotate(transform, angleY, 1, 0, 0)
+        diceView.layer.sublayerTransform = transform
+        
+        // Saves the angle
+        angle.x = angleX
+        angle.y = angleY
     }
     
     // MARK: Do something
