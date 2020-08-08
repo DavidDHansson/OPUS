@@ -105,7 +105,7 @@ class TabBarViewController: UITabBarController, TabBarDisplayLogic {
         settingsNVC.tabBarItem = UITabBarItem(title: "Indstillinger", image: UIImage(named: "settingsIdle"), selectedImage: UIImage(named: "settingsSelected"))
 
         let diceNVC = UINavigationController(rootViewController: diceVC)
-        diceNVC.tabBarItem = UITabBarItem(title: "Terning", image: UIImage(named: "settingsIdle"), selectedImage: UIImage(named: "settingsSelected"))
+        diceNVC.tabBarItem = UITabBarItem(title: "Terning", image: UIImage(named: "diceIdle"), selectedImage: UIImage(named: "diceSelected"))
         
         let controllers = [
             homeNVC,
