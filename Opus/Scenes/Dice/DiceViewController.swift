@@ -77,6 +77,20 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
         
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(viewTransform))
         diceView.addGestureRecognizer(panGesture)
+        
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped)))
+    }
+    
+    @objc func viewTapped() {
+
+        let time = Double.random(in: 0.001 ... 0.003)
+        spin(withTime: time)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + (time * 1000), execute: {
+            self.show(diceFace: Int.random(in: 1 ... 6))
+        })
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -178,27 +192,27 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
         
         switch face {
         case 1:
-            print("-1-")
+            debugPrint("-1-")
             angleX = 0
             angleY = 0
         case 2:
-            print("-2-")
+            debugPrint("-2-")
             angleX = (-CGFloat.pi / 2)
             angleY = 0
         case 3:
-            print("-3-")
+            debugPrint("-3-")
             angleX = 0
             angleY = (CGFloat.pi / 2)
         case 4:
-            print("-4-")
+            debugPrint("-4-")
             angleX = 0
             angleY = (-CGFloat.pi / 2)
         case 5:
-            print("-5-")
+            debugPrint("-5-")
             angleX = (CGFloat.pi / 2)
             angleY = (CGFloat.pi / 2)
         case 6:
-            print("-6-")
+            debugPrint("-6-")
             angleX = CGFloat.pi
             angleY = 0
         default: break
@@ -206,11 +220,29 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
         
         transform = CATransform3DRotate(transform, angleX, 0, 1, 0)
         transform = CATransform3DRotate(transform, angleY, 1, 0, 0)
+        
         diceView.layer.sublayerTransform = transform
         
         // Saves the angle
         angle.x = angleX
         angle.y = angleY
+    }
+    
+    func spin(withTime time: Double) {
+        // Spin
+        for i in 0...1000 {
+            
+            let line = Double(i) * time
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + line, execute: {
+                var transform = CATransform3DIdentity
+                transform.m34 = -1 / 500
+                transform = CATransform3DRotate(transform, CGFloat(integerLiteral: i/20), 0, 1, 0)
+                transform = CATransform3DRotate(transform, CGFloat(integerLiteral: i/20), 1, 0, 0)
+                self.diceView.layer.sublayerTransform = transform
+            })
+
+        }
     }
     
     // MARK: Do something
