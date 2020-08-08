@@ -17,7 +17,7 @@ class TabBarViewController: UITabBarController, TabBarDisplayLogic {
     var router: (NSObjectProtocol & TabBarRoutingLogic & TabBarDataPassing)?
     
     private let homeVC = HomeViewController()
-//    private let diceVC =
+    private let diceVC = DiceViewController()
     private let settingsVC = SettingsViewController()
     
     private var layerGradient: CAGradientLayer?
@@ -104,8 +104,12 @@ class TabBarViewController: UITabBarController, TabBarDisplayLogic {
         let settingsNVC = UINavigationController(rootViewController: settingsVC)
         settingsNVC.tabBarItem = UITabBarItem(title: "Indstillinger", image: UIImage(named: "settingsIdle"), selectedImage: UIImage(named: "settingsSelected"))
 
+        let diceNVC = UINavigationController(rootViewController: diceVC)
+        diceNVC.tabBarItem = UITabBarItem(title: "Indstillinger", image: UIImage(named: "settingsIdle"), selectedImage: UIImage(named: "settingsSelected"))
+        
         let controllers = [
             homeNVC,
+            diceNVC,
             settingsNVC
         ]
 
