@@ -72,6 +72,7 @@ public class SwiftyOnboard: UIView, UIScrollViewDelegate {
         scrollView.isUserInteractionEnabled = true
         scrollView.isScrollEnabled = true
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        scrollView.isDirectionalLockEnabled = true
         return scrollView
     }()
     
