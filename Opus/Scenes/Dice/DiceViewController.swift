@@ -68,7 +68,6 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
         super.viewDidLoad()
         view.backgroundColor = UIColor(r: 240, g: 240, b: 250)
 
-        
         // Add dice and subviews
         addDice()
         
@@ -84,10 +83,11 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
     
     @objc func viewTapped() {
 
-        let time = Double.random(in: 0.001 ... 0.003)
-        spin(withTime: time)
+        let rev = Int.random(in: 1800 ... 3500)
+        let time = Double.random(in: 0.0001 ... 0.0002)
+        spin(withRev: rev, andTime: time)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + (time * 1000), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + (time * Double(rev)), execute: {
             self.show(diceFace: Int.random(in: 1 ... 6))
         })
         
@@ -228,9 +228,9 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
         angle.y = angleY
     }
     
-    func spin(withTime time: Double) {
+    func spin(withRev rev: Int, andTime time: Double) {
         // Spin
-        for i in 0...1000 {
+        for i in 0...rev {
             
             let line = Double(i) * time
             
