@@ -18,6 +18,8 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
     
     var angle = CGPoint.init(x: 0, y: 0)
     
+    var isSpinning: Bool = false
+    
     private let diceView: UIView = {
         let v = UIView(frame: .zero)
         return v
@@ -83,12 +85,20 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
     
     @objc func viewTapped() {
 
+        if isSpinning { return }
+        isSpinning = true
+        
         let rev = Int.random(in: 1800 ... 3500)
         let time = Double.random(in: 0.0001 ... 0.0002)
         spin(withRev: rev, andTime: time)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + (time * Double(rev)), execute: {
-            self.show(diceFace: Int.random(in: 1 ... 6))
+        DispatchQueue.main.asyncAfter(deadline: .now() + (time * Double(rev)), execute: { [weak self] in
+            self?.show(diceFace: Int.random(in: 1 ... 6))
+            
+            // Small delay
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: { [weak self] in
+                self?.isSpinning = false
+            })
         })
         
     }
@@ -163,6 +173,8 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
     
     @objc func viewTransform(sender: UIPanGestureRecognizer) {
         
+        if isSpinning { return }
+        
         // Calculates the movement, based on the varible "angle"
         let point = sender.translation(in: diceView)
         let angleX = angle.x + (point.x / 60)
@@ -232,9 +244,9 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
         // Spin
         for i in 0...rev {
             
-            let line = Double(i) * time
+            let delay = Double(i) * time
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + line, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
                 var transform = CATransform3DIdentity
                 transform.m34 = -1 / 500
                 transform = CATransform3DRotate(transform, CGFloat(integerLiteral: i/20), 0, 1, 0)
