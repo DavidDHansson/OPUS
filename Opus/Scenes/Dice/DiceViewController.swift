@@ -17,14 +17,14 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
     var router: (NSObjectProtocol & DiceRoutingLogic & DiceDataPassing)?
     
     var angle = CGPoint.init(x: 0, y: 0)
-    
     var isSpinning: Bool = false
     
+    override var canBecomeFirstResponder: Bool { get { return true } }
+
     private let diceView: UIView = {
         let v = UIView(frame: .zero)
         return v
     }()
-    
     
     // MARK: Object lifecycle
     
@@ -80,10 +80,10 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
         diceView.addGestureRecognizer(panGesture)
         
         view.isUserInteractionEnabled = true
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped)))
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(throwDice)))
     }
     
-    @objc func viewTapped() {
+    @objc func throwDice() {
 
         if isSpinning { return }
         isSpinning = true
@@ -106,6 +106,22 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.resignFirstResponder()
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            throwDice()
+        }
     }
     
     func addDice() {
@@ -204,27 +220,21 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
         
         switch face {
         case 1:
-            debugPrint("-1-")
             angleX = 0
             angleY = 0
         case 2:
-            debugPrint("-2-")
             angleX = (-CGFloat.pi / 2)
             angleY = 0
         case 3:
-            debugPrint("-3-")
             angleX = 0
             angleY = (CGFloat.pi / 2)
         case 4:
-            debugPrint("-4-")
             angleX = 0
             angleY = (-CGFloat.pi / 2)
         case 5:
-            debugPrint("-5-")
             angleX = (CGFloat.pi / 2)
             angleY = (CGFloat.pi / 2)
         case 6:
-            debugPrint("-6-")
             angleX = CGFloat.pi
             angleY = 0
         default: break
