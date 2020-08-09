@@ -21,6 +21,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     
     var playerState: Home.PlayerState = .disabled
     var isPaused: Bool = true
+    var isPlayerSetup: Bool = false
     
     private let stackView: UIStackView = {
         let s = UIStackView(frame: .zero)
@@ -116,7 +117,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         welcomePage()
         
         // Setup player and logic
-        player.setup()
+//        player.setup()
         
         // Add observer
         NotificationCenter.default.addObserver(self, selector: #selector(disablePlayButton), name: NSNotification.Name(rawValue: "disablePlayButton"), object: nil)
@@ -190,6 +191,11 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     // MARK: Player & Logic
     
     @objc func start() {
+        
+        if !isPlayerSetup {
+            player.setup()
+            isPlayerSetup = true
+        }
         
         configurePlayer(withState: .playing)
         isPaused = false
