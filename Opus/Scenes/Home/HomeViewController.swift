@@ -119,8 +119,9 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         // Setup player and logic
 //        player.setup()
         
-        // Add observer
+        // Add observers
         NotificationCenter.default.addObserver(self, selector: #selector(disablePlayButton), name: NSNotification.Name(rawValue: "disablePlayButton"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(pausePlayButton), name: NSNotification.Name(rawValue: "pausePlayButton"), object: nil)
         
         startButton.addTarget(self, action: #selector(start), for: .touchUpInside)
         playButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tooglePlayer)))
@@ -221,6 +222,11 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     
     @objc func disablePlayButton() {
         configurePlayer(withState: .disabled)
+    }
+    
+    @objc func pausePlayButton() {
+        isPaused = true
+        configurePlayer(withState: .paused)
     }
     
     func configurePlayer(withState state: Home.PlayerState) {

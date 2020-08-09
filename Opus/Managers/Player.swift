@@ -93,6 +93,13 @@ public class Player: PlayerProtocol {
     @objc private func tick() {
         if state == .paused || state == .disabled { return }
 
+        // Check if user started playing from another source
+        if (AVAudioSession.sharedInstance().secondaryAudioShouldBeSilencedHint) {
+            state = .paused
+            NotificationCenter.default.post(name: NSNotification.Name("pausePlayButton"), object: nil)
+            return
+        }
+        
         progress += 0.1
 
         let randomAddition = Double.random(in: 3 ... 10)
