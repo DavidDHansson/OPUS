@@ -73,6 +73,7 @@ public class SwiftyOnboard: UIView, UIScrollViewDelegate {
         scrollView.isScrollEnabled = true
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         scrollView.isDirectionalLockEnabled = true
+        if #available(iOS 11, *) { scrollView.contentInsetAdjustmentBehavior = .never }
         return scrollView
     }()
     

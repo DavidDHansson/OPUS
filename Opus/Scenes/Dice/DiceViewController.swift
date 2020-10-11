@@ -194,7 +194,7 @@ class DiceViewController: UIViewController, DiceDisplayLogic {
         // Calculates the movement, based on the varible "angle"
         let point = sender.translation(in: diceView)
         let angleX = angle.x + (point.x / 60)
-        let angleY = angle.y + (point.y / 60)
+        let angleY = angle.y - (point.y / 60)
         
         // Moves the dice
         var transform = CATransform3DIdentity
