@@ -25,7 +25,7 @@ open class SwiftyOnboardPage: UIView {
     
     public var titleLabel: UILabel = {
         let l = UILabel(frame: .zero)
-        l.font = Font.Roboto.bold.size(35)
+        l.font = Font.SanFranciscoDisplay.bold.size(35)
         l.textAlignment = .center
         l.numberOfLines = 3
         return l
@@ -33,7 +33,7 @@ open class SwiftyOnboardPage: UIView {
     
     public var descriptionLabel: UILabel = {
         let l = UILabel(frame: .zero)
-        l.font = Font.Roboto.regular.size(20)
+        l.font = Font.SanFranciscoDisplay.regular.size(20)
         l.textAlignment = .center
         l.numberOfLines = 5
         return l

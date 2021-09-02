@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol WelcomeDisplayLogic: class {
+protocol WelcomeDisplayLogic: AnyObject {
     func displaySomething(viewModel: Welcome.Something.ViewModel)
 }
 

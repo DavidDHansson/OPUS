@@ -16,11 +16,6 @@
 		EB02F1DB24D4379F00126731 /* TabBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1D524D4379F00126731 /* TabBarInteractor.swift */; };
 		EB02F1E724D49FEB00126731 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB02F1E624D49FEB00126731 /* PopupViewController.swift */; };
 		EB03F3A224CDAEA40030F518 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB03F3A124CDAEA40030F518 /* UIButton+Extensions.swift */; };
-		EB03F3AD24CDD76F0030F518 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB03F3A924CDD76F0030F518 /* Roboto-Medium.ttf */; };
-		EB03F3AE24CDD76F0030F518 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB03F3AA24CDD76F0030F518 /* Roboto-Regular.ttf */; };
-		EB03F3AF24CDD76F0030F518 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB03F3AB24CDD76F0030F518 /* Roboto-Bold.ttf */; };
-		EB03F3B024CDD76F0030F518 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB03F3AC24CDD76F0030F518 /* Roboto-Black.ttf */; };
-		EB03F3B224CDD7910030F518 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB03F3B124CDD7910030F518 /* UIFont+Extensions.swift */; };
 		EB03F3B724CDDFDF0030F518 /* SwiftyOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB03F3B424CDDFDE0030F518 /* SwiftyOnboard.swift */; };
 		EB03F3B824CDDFDF0030F518 /* SwiftyOnboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB03F3B524CDDFDE0030F518 /* SwiftyOnboardOverlay.swift */; };
 		EB03F3BB24CDE0560030F518 /* SwiftyOnboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB03F3BA24CDE0560030F518 /* SwiftyOnboardPage.swift */; };
@@ -67,6 +62,20 @@
 		EBD4693D24CE0BF500C1D885 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD4693724CE0BF500C1D885 /* SettingsModels.swift */; };
 		EBD4693E24CE0BF500C1D885 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD4693824CE0BF500C1D885 /* SettingsViewController.swift */; };
 		EBD4693F24CE0BF500C1D885 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD4693924CE0BF500C1D885 /* SettingsInteractor.swift */; };
+		EBF8AA1726E0C8F10015EA6C /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8AA1626E0C8F10015EA6C /* UIFont+Extensions.swift */; };
+		EBF8AA2526E0CD840015EA6C /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF8AA1B26E0CB9B0015EA6C /* Roboto-Black.ttf */; };
+		EBF8AA2626E0CD840015EA6C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF8AA2426E0CB9C0015EA6C /* Roboto-Bold.ttf */; };
+		EBF8AA2726E0CD840015EA6C /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF8AA1F26E0CB9C0015EA6C /* Roboto-Medium.ttf */; };
+		EBF8AA2826E0CD840015EA6C /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF8AA1A26E0CB9B0015EA6C /* Roboto-Regular.ttf */; };
+		EBF8AA2926E0CD840015EA6C /* SanFranciscoDisplay-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EBF8AA1D26E0CB9C0015EA6C /* SanFranciscoDisplay-Black.otf */; };
+		EBF8AA2A26E0CD840015EA6C /* SanFranciscoDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EBF8AA1926E0CB9B0015EA6C /* SanFranciscoDisplay-Bold.otf */; };
+		EBF8AA2B26E0CD840015EA6C /* SanFranciscoDisplay-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = EBF8AA1E26E0CB9C0015EA6C /* SanFranciscoDisplay-Heavy.otf */; };
+		EBF8AA2C26E0CD840015EA6C /* SanFranciscoDisplay-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EBF8AA1826E0CB9B0015EA6C /* SanFranciscoDisplay-Italic.otf */; };
+		EBF8AA2D26E0CD840015EA6C /* SanFranciscoDisplay-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EBF8AA1C26E0CB9C0015EA6C /* SanFranciscoDisplay-Light.otf */; };
+		EBF8AA2E26E0CD840015EA6C /* SanFranciscoDisplay-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EBF8AA2326E0CB9C0015EA6C /* SanFranciscoDisplay-Medium.otf */; };
+		EBF8AA2F26E0CD840015EA6C /* SanFranciscoDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EBF8AA2126E0CB9C0015EA6C /* SanFranciscoDisplay-Regular.otf */; };
+		EBF8AA3026E0CD840015EA6C /* SanFranciscoDisplay-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EBF8AA2026E0CB9C0015EA6C /* SanFranciscoDisplay-Semibold.otf */; };
+		EBF8AA3126E0CD840015EA6C /* SanFranciscoDisplay-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EBF8AA2226E0CB9C0015EA6C /* SanFranciscoDisplay-Thin.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,11 +90,6 @@
 		EB02F1D524D4379F00126731 /* TabBarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInteractor.swift; sourceTree = "<group>"; };
 		EB02F1E624D49FEB00126731 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		EB03F3A124CDAEA40030F518 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
-		EB03F3A924CDD76F0030F518 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
-		EB03F3AA24CDD76F0030F518 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		EB03F3AB24CDD76F0030F518 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		EB03F3AC24CDD76F0030F518 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
-		EB03F3B124CDD7910030F518 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		EB03F3B424CDDFDE0030F518 /* SwiftyOnboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyOnboard.swift; sourceTree = "<group>"; };
 		EB03F3B524CDDFDE0030F518 /* SwiftyOnboardOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyOnboardOverlay.swift; sourceTree = "<group>"; };
 		EB03F3BA24CDE0560030F518 /* SwiftyOnboardPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyOnboardPage.swift; sourceTree = "<group>"; };
@@ -134,6 +138,20 @@
 		EBD4693724CE0BF500C1D885 /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
 		EBD4693824CE0BF500C1D885 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		EBD4693924CE0BF500C1D885 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		EBF8AA1626E0C8F10015EA6C /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		EBF8AA1826E0CB9B0015EA6C /* SanFranciscoDisplay-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Italic.otf"; sourceTree = "<group>"; };
+		EBF8AA1926E0CB9B0015EA6C /* SanFranciscoDisplay-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Bold.otf"; sourceTree = "<group>"; };
+		EBF8AA1A26E0CB9B0015EA6C /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		EBF8AA1B26E0CB9B0015EA6C /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		EBF8AA1C26E0CB9C0015EA6C /* SanFranciscoDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Light.otf"; sourceTree = "<group>"; };
+		EBF8AA1D26E0CB9C0015EA6C /* SanFranciscoDisplay-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Black.otf"; sourceTree = "<group>"; };
+		EBF8AA1E26E0CB9C0015EA6C /* SanFranciscoDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Heavy.otf"; sourceTree = "<group>"; };
+		EBF8AA1F26E0CB9C0015EA6C /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		EBF8AA2026E0CB9C0015EA6C /* SanFranciscoDisplay-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Semibold.otf"; sourceTree = "<group>"; };
+		EBF8AA2126E0CB9C0015EA6C /* SanFranciscoDisplay-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Regular.otf"; sourceTree = "<group>"; };
+		EBF8AA2226E0CB9C0015EA6C /* SanFranciscoDisplay-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Thin.otf"; sourceTree = "<group>"; };
+		EBF8AA2326E0CB9C0015EA6C /* SanFranciscoDisplay-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Medium.otf"; sourceTree = "<group>"; };
+		EBF8AA2426E0CB9C0015EA6C /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,30 +205,11 @@
 		EB03F3A624CDD73D0030F518 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EBF8A9FB26E0C8C20015EA6C /* Fonts */,
 				EBD4692824CE09C300C1D885 /* Music */,
 				EB03F3B324CDDFC90030F518 /* Onboard */,
-				EB03F3A724CDD75E0030F518 /* Fonts */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		EB03F3A724CDD75E0030F518 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				EB03F3A824CDD76F0030F518 /* Roboto */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		EB03F3A824CDD76F0030F518 /* Roboto */ = {
-			isa = PBXGroup;
-			children = (
-				EB03F3A924CDD76F0030F518 /* Roboto-Medium.ttf */,
-				EB03F3AA24CDD76F0030F518 /* Roboto-Regular.ttf */,
-				EB03F3AB24CDD76F0030F518 /* Roboto-Bold.ttf */,
-				EB03F3AC24CDD76F0030F518 /* Roboto-Black.ttf */,
-			);
-			path = Roboto;
 			sourceTree = "<group>";
 		};
 		EB03F3B324CDDFC90030F518 /* Onboard */ = {
@@ -286,9 +285,9 @@
 		EB0525EE24CC76770065409A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				EBF8AA1626E0C8F10015EA6C /* UIFont+Extensions.swift */,
 				EB0525EF24CC768E0065409A /* UIColor+Extensions.swift */,
 				EB03F3A124CDAEA40030F518 /* UIButton+Extensions.swift */,
-				EB03F3B124CDD7910030F518 /* UIFont+Extensions.swift */,
 				EB02F1CE24D4370E00126731 /* UIView+Extensions.swift */,
 				EB95DF9F24D5823000D065F6 /* UIImageView+Extensions.swift */,
 				EB95DFA324D598D100D065F6 /* UserDefaults+Extensions.swift */,
@@ -394,6 +393,26 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		EBF8A9FB26E0C8C20015EA6C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EBF8AA1B26E0CB9B0015EA6C /* Roboto-Black.ttf */,
+				EBF8AA2426E0CB9C0015EA6C /* Roboto-Bold.ttf */,
+				EBF8AA1F26E0CB9C0015EA6C /* Roboto-Medium.ttf */,
+				EBF8AA1A26E0CB9B0015EA6C /* Roboto-Regular.ttf */,
+				EBF8AA1D26E0CB9C0015EA6C /* SanFranciscoDisplay-Black.otf */,
+				EBF8AA1926E0CB9B0015EA6C /* SanFranciscoDisplay-Bold.otf */,
+				EBF8AA1E26E0CB9C0015EA6C /* SanFranciscoDisplay-Heavy.otf */,
+				EBF8AA1826E0CB9B0015EA6C /* SanFranciscoDisplay-Italic.otf */,
+				EBF8AA1C26E0CB9C0015EA6C /* SanFranciscoDisplay-Light.otf */,
+				EBF8AA2326E0CB9C0015EA6C /* SanFranciscoDisplay-Medium.otf */,
+				EBF8AA2126E0CB9C0015EA6C /* SanFranciscoDisplay-Regular.otf */,
+				EBF8AA2026E0CB9C0015EA6C /* SanFranciscoDisplay-Semibold.otf */,
+				EBF8AA2226E0CB9C0015EA6C /* SanFranciscoDisplay-Thin.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -453,18 +472,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBF8AA2526E0CD840015EA6C /* Roboto-Black.ttf in Resources */,
+				EBF8AA2626E0CD840015EA6C /* Roboto-Bold.ttf in Resources */,
+				EBF8AA2726E0CD840015EA6C /* Roboto-Medium.ttf in Resources */,
+				EBF8AA2826E0CD840015EA6C /* Roboto-Regular.ttf in Resources */,
+				EBF8AA2926E0CD840015EA6C /* SanFranciscoDisplay-Black.otf in Resources */,
+				EBF8AA2A26E0CD840015EA6C /* SanFranciscoDisplay-Bold.otf in Resources */,
+				EBF8AA2B26E0CD840015EA6C /* SanFranciscoDisplay-Heavy.otf in Resources */,
+				EBF8AA2C26E0CD840015EA6C /* SanFranciscoDisplay-Italic.otf in Resources */,
+				EBF8AA2D26E0CD840015EA6C /* SanFranciscoDisplay-Light.otf in Resources */,
+				EBF8AA2E26E0CD840015EA6C /* SanFranciscoDisplay-Medium.otf in Resources */,
+				EBF8AA2F26E0CD840015EA6C /* SanFranciscoDisplay-Regular.otf in Resources */,
+				EBF8AA3026E0CD840015EA6C /* SanFranciscoDisplay-Semibold.otf in Resources */,
+				EBF8AA3126E0CD840015EA6C /* SanFranciscoDisplay-Thin.otf in Resources */,
 				EBD4692E24CE09C300C1D885 /* buildUpP3.mp3 in Resources */,
-				EB03F3AD24CDD76F0030F518 /* Roboto-Medium.ttf in Resources */,
 				EBD4693024CE09C300C1D885 /* drop.mp3 in Resources */,
 				EB0525D824CC707B0065409A /* LaunchScreen.storyboard in Resources */,
 				EB0B216224CF3C7B0058B7DA /* bambam.mp3 in Resources */,
-				EB03F3AF24CDD76F0030F518 /* Roboto-Bold.ttf in Resources */,
 				EBD4693124CE09C300C1D885 /* p3.mp3 in Resources */,
 				EB0525D524CC707B0065409A /* Assets.xcassets in Resources */,
-				EB03F3B024CDD76F0030F518 /* Roboto-Black.ttf in Resources */,
 				EBD4693224CE09C300C1D885 /* slow.mp3 in Resources */,
 				EBD4692F24CE09C300C1D885 /* buildup.mp3 in Resources */,
-				EB03F3AE24CDD76F0030F518 /* Roboto-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +562,7 @@
 				EB0525EA24CC71AF0065409A /* HomeModels.swift in Sources */,
 				EB02F1D624D4379F00126731 /* TabBarPresenter.swift in Sources */,
 				EB0B216724D0639B0058B7DA /* Player.swift in Sources */,
+				EBF8AA1726E0C8F10015EA6C /* UIFont+Extensions.swift in Sources */,
 				EB0525EB24CC71AF0065409A /* HomeViewController.swift in Sources */,
 				EB0525FB24CC7D210065409A /* WelcomeModels.swift in Sources */,
 				EB95DFA024D5823000D065F6 /* UIImageView+Extensions.swift in Sources */,
@@ -542,7 +571,6 @@
 				EB02F1D824D4379F00126731 /* TabBarRouter.swift in Sources */,
 				EBCA8C0924DEB84F00710AF2 /* DiceWorker.swift in Sources */,
 				EB8EB12924D57ABF00341F81 /* SettingsItem.swift in Sources */,
-				EB03F3B224CDD7910030F518 /* UIFont+Extensions.swift in Sources */,
 				EBCA8C0A24DEB84F00710AF2 /* DiceRouter.swift in Sources */,
 				EB0B216924D063B90058B7DA /* PlayerProtocol.swift in Sources */,
 				EB0525FC24CC7D210065409A /* WelcomeViewController.swift in Sources */,

@@ -18,7 +18,7 @@ class SettingsFooterView: UITableViewHeaderFooterView {
         let l = UILabel(frame: .zero)
         l.textAlignment = .left
         l.textColor = UIColor(r: 137, g: 137, b: 137)
-        l.font = UIFont.systemFont(ofSize: 12)
+        l.font = Font.SanFranciscoDisplay.regular.size(12)
         l.numberOfLines = 7
         return l
     }()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SettingHeaderViewDelegate: class {
+protocol SettingHeaderViewDelegate: AnyObject {
     func configure(config: SettingsHeaderView.ViewModel)
 }
 
@@ -22,7 +22,7 @@ class SettingsHeaderView: UITableViewHeaderFooterView {
         let l = UILabel(frame: .zero)
         l.textAlignment = .left
         l.textColor = UIColor(r: 137, g: 137, b: 137)
-        l.font = UIFont.systemFont(ofSize: 15)
+        l.font = Font.SanFranciscoDisplay.regular.size(15)
         return l
     }()
     

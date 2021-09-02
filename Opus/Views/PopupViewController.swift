@@ -54,7 +54,7 @@ class PopupViewController: UIViewController {
     
     private let titleLabel: UILabel = {
         let l = UILabel(frame: .zero)
-        l.font = Font.Roboto.bold.size(22)
+        l.font = Font.SanFranciscoDisplay.bold.size(22)
         l.numberOfLines = 0
         l.textAlignment = .center
         return l
@@ -69,7 +69,7 @@ class PopupViewController: UIViewController {
     private let descriptionLabel: UILabel = {
         let l = UILabel(frame: .zero)
         l.textAlignment = .center
-        l.font = Font.Roboto.regular.size(16)
+        l.font = Font.SanFranciscoDisplay.regular.size(16)
         l.numberOfLines = 0
         return l
     }()
@@ -77,7 +77,7 @@ class PopupViewController: UIViewController {
     private let continueButton: UIButton = {
         let b = UIButton(frame: .zero)
         b.setTitleColor(.white, for: .normal)
-        b.titleLabel?.font = Font.Roboto.medium.size(16)
+        b.titleLabel?.font = Font.SanFranciscoDisplay.medium.size(16)
         return b
     }()
     
