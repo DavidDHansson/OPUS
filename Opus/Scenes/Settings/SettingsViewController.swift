@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SettingsDisplayLogic: class {
+protocol SettingsDisplayLogic: AnyObject {
     func displaySomething(viewModel: Settings.Something.ViewModel)
 }
 
@@ -19,7 +19,6 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
     var data = [
         [],
         [
-            SettingsItem(title: "Om Mig", type: .aboutMe, opusType: nil, switchIsOn: false),
             SettingsItem(title: "Regler", type: .help, opusType: nil, switchIsOn: false)
         ],
         [
@@ -30,7 +29,7 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
     var headerTitles = ["Opus", "Andet", "Nulstil"]
     
     public let tableView: UITableView = {
-        let t = UITableView(frame: .zero, style: .grouped)
+        let t = UITableView(frame: .zero, style: .insetGrouped)
         t.backgroundColor = .clear
         t.alwaysBounceVertical = true
         t.showsVerticalScrollIndicator = false

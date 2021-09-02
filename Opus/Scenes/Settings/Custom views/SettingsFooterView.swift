@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SettingsFooterViewDelegate: class {
+protocol SettingsFooterViewDelegate: AnyObject {
     func configure(text: String)
 }
 
@@ -18,7 +18,7 @@ class SettingsFooterView: UITableViewHeaderFooterView {
         let l = UILabel(frame: .zero)
         l.textAlignment = .left
         l.textColor = UIColor(r: 137, g: 137, b: 137)
-        l.font = UIFont.systemFont(ofSize: 15)
+        l.font = UIFont.systemFont(ofSize: 12)
         l.numberOfLines = 7
         return l
     }()
@@ -31,8 +31,7 @@ class SettingsFooterView: UITableViewHeaderFooterView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 15).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 44).isActive = true
-        
+        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
     }
     
     required init?(coder: NSCoder) {
