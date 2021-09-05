@@ -99,7 +99,7 @@ class TabBarViewController: UITabBarController, TabBarDisplayLogic {
     private func setupTabBar() {
         
         let homeNVC = UINavigationController(rootViewController: homeVC)
-        homeNVC.tabBarItem = UITabBarItem(title: "Opus", image: UIImage(named: "iconsHomeIdle"), selectedImage: UIImage(named: "iconsHomeSelected"))
+        homeNVC.tabBarItem = UITabBarItem(title: "OPUS", image: UIImage(named: "iconsHomeIdle"), selectedImage: UIImage(named: "iconsHomeSelected"))
   
         let settingsNVC = UINavigationController(rootViewController: settingsVC)
         settingsNVC.tabBarItem = UITabBarItem(title: "Indstillinger", image: UIImage(named: "settingsIdle"), selectedImage: UIImage(named: "settingsSelected"))

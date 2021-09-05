@@ -18,10 +18,10 @@ class WelcomeViewController: UIViewController, WelcomeDisplayLogic {
     
     var swiftyOnboard: SwiftyOnboard!
     let pages = [
-        Welcome.OnBoardPage(title: "1. Del terninger ud", description: "Jo flere terninger - Jo sjovere \nDet anbefalet at have en terning for hver tredje person", image: "dice"),
-        Welcome.OnBoardPage(title: "2. Klik på \"Start\" i appen", description: "(Husk at tage et besøg forbi indstillingerne)", image: nil),
-        Welcome.OnBoardPage(title: "3. Slå med terningerne", description: "1 - Send terningen til højre \n2 - Send terningen til venstre \n6 - Send terningen til en valgfri", image: "multi"),
-        Welcome.OnBoardPage(title: "4. BUND!", description: "Når musiken dropper, så bunder alle dem med en terning tilbage.", image: "users")
+        Welcome.OnBoardPage(title: "1. Del terninger ud", description: "Jo flere terninger - jo sjovere", image: nil),
+        Welcome.OnBoardPage(title: "2. Klik på \"Start\" i appen", description: "(Husk at kig forbi indstillingerne)", image: nil),
+        Welcome.OnBoardPage(title: "3. Slå med terningerne", description: "1 - Send terning til højre \n2 - Send terning til venstre \n6 - Send terning til en valgfri", image: "multi"),
+        Welcome.OnBoardPage(title: "4. BUUUND!", description: "Når musiken dropper, så bunder alle med en terning tilbage", image: nil)
     ]
     
     // MARK: Object lifecycle

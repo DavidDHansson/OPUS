@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
     var interactor: SettingsBusinessLogic?
     var router: (NSObjectProtocol & SettingsRoutingLogic & SettingsDataPassing)?
     
-    private var headerTitles = ["Opus", "Andet", "Nulstil"]
+    private var headerTitles = ["OPUS", "Andet", "Nulstil"]
     private var data: [[Settings.SettingsItem]] = [
         [],
         [
@@ -231,9 +231,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SettingsFooterView") as? SettingsFooterView else { return nil }
 
             let v = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-            let n = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String
             
-            view.configure(text: "Version: \(v ?? "0") - \(n ?? "Opus") - David Hansson\n\nTak til Eric Prydz - Opus (2015) \nOg skud ud til dranker gutterne")
+            view.configure(text: "Version: \(v ?? "0") - OPUS - David Hansson\n\nTak til Eric Prydz - Opus (2015) \nSkud ud til dranker gutterne")
             return view
         }
         

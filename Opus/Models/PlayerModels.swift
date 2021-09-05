@@ -45,7 +45,7 @@ var opus = [OpusType]()
 
 let standardOpus = [
     OpusType(title: "Normal", description: "Normal Opus, med tilfældig \"drop\" de sidste 60 sekunder.", type: .normal, weight: 1, enabled: true),
-    OpusType(title: "Langsom", description: "Normal opbygning, med et \"langsomt bid\" efterfulgt af \"drop\". Dette kan ske maksimum 2 gange.", type: .slowPart, weight: 0.5, enabled: true),
-    OpusType(title: "Langsom med hurtig drop", description: "Normal opbygning, med et \"langsomt bid\" efterfulgt af \"drop\" uden opbygning. Dette kan ske maksimum 2 gange.", type: .slowPartQuickDrop, weight: 0.4, enabled: true),
+    OpusType(title: "Langsom", description: "Normal opbygning, efterfulgt af \"langsomt del\" også \"drop\". Dette kan ske maksimum 2 gange.", type: .slowPart, weight: 0.5, enabled: true),
+    OpusType(title: "Langsom også hurtig", description: "Normal opbygning, efterfulgt af \"langsomt del\" også \"drop\", men uden opbygning. Dette kan ske maksimum 2 gange.", type: .slowPartQuickDrop, weight: 0.4, enabled: true),
     OpusType(title: "Hurtig", description: "Normal opbygning med uventet \"drop\" efter 20 - 40 sekunder ", type: .quickDrop, weight: 0.2, enabled: true)
 ]
