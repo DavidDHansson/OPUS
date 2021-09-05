@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TabBarDisplayLogic: class {
+protocol TabBarDisplayLogic: AnyObject {
     func displaySomething(viewModel: TabBar.Something.ViewModel)
 }
 

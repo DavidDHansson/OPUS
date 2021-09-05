@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol DiceDisplayLogic: class {
+protocol DiceDisplayLogic: AnyObject {
     func displaySomething(viewModel: Dice.Something.ViewModel)
 }
 
