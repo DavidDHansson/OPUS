@@ -19,4 +19,20 @@ enum Settings {
         struct ViewModel {
         }
     }
+    
+    struct SettingsItem {
+        let title: String
+        let type: SettingsItemType
+        let opusType: OpusTypes?
+        var isSwitchOn: Bool?
+    }
+
+    enum SettingsItemType {
+        case onOffSwitch
+        case reset
+        case aboutMe
+        case help
+        case share
+        case review
+    }
 }

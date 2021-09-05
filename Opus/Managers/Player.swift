@@ -29,7 +29,7 @@ public class Player: PlayerProtocol {
             player.volume = 1
             player.play()
         } catch let error {
-            print(error.localizedDescription)
+            debugPrint(error.localizedDescription)
         }
     }
     
@@ -61,7 +61,7 @@ public class Player: PlayerProtocol {
             }
             
         } catch let error {
-            print(error.localizedDescription)
+            debugPrint(error.localizedDescription)
         }
     }
     
@@ -84,9 +84,9 @@ public class Player: PlayerProtocol {
             UserDefaults.standard.setStructArray(opus, forKey: "settings")
         }
         
-        print("\n--opus, load in home--")
+        debugPrint("\n--opus, load in home--")
         for i in opus {
-            print("\(i.title): \(i.enabled)")
+            debugPrint("\(i.title): \(i.enabled)")
         }
     }
     
@@ -131,11 +131,11 @@ public class Player: PlayerProtocol {
         var options = [OpusType]()
         let availableOpus = drops.filter({ $0.enabled == true })
         
-        print("\n\n--Available in Getweighteddrop--")
+        debugPrint("\n\n--Available in Getweighteddrop--")
         for i in availableOpus {
-            print("\(i.title): \(i.enabled)")
+            debugPrint("\(i.title): \(i.enabled)")
         }
-        print("----\n")
+        debugPrint("----\n")
         
         for current in availableOpus {
             for _ in 0 ..< (Int(current.weight * 10.0)) {
@@ -160,11 +160,11 @@ public class Player: PlayerProtocol {
             counts[item] = (counts[item] ?? 0) + 1
         }
         
-        print("\n\n-----Weight Report-----")
+        debugPrint("\n\n-----Weight Report-----")
         for (key, value) in counts {
-            print("\(key) occurs \(value) time(s)")
+            debugPrint("\(key) occurs \(value) time(s)")
         }
-        print("\n\n")
+        debugPrint("\n\n")
     }
     
     func generateQueue() {
@@ -262,9 +262,9 @@ public class Player: PlayerProtocol {
             q.append(Clip(bit: .drop, stopAfter: 60))
         }
 
-        print("\n\n----- Queue (type: \(type.title)) -----")
+        debugPrint("\n\n----- Queue (type: \(type.title)) -----")
         for part in q {
-            print("Part: \(part.bit.rawValue), stops after: \(part.stopAfter)")
+            debugPrint("Part: \(part.bit.rawValue), stops after: \(part.stopAfter)")
         }
         
         queue = q

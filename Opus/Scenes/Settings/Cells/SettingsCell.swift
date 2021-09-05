@@ -39,7 +39,7 @@ class SettingsCell: UITableViewCell {
             
             switch item.type {
             case .onOffSwitch:
-                guard let state = item.switchIsOn else { return }
+                guard let state = item.isSwitchOn else { return }
                 switchButton.isHidden = false
                 switchButton.isOn = state
             case .reset:

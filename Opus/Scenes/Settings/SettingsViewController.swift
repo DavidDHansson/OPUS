@@ -16,13 +16,15 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
     var interactor: SettingsBusinessLogic?
     var router: (NSObjectProtocol & SettingsRoutingLogic & SettingsDataPassing)?
     
-    var data = [
+    var data: [[Settings.SettingsItem]] = [
         [],
         [
-            SettingsItem(title: "Regler", type: .help, opusType: nil, switchIsOn: false)
+            .init(title: "Regler", type: .help, opusType: nil, isSwitchOn: false),
+            .init(title: "Del med en ven", type: .share, opusType: nil, isSwitchOn: false),
+            .init(title: "Giv en anmeldelse", type: .review, opusType: nil, isSwitchOn: false)
         ],
         [
-            SettingsItem(title: "Nulstil Indstillinger", type: .reset, opusType: nil, switchIsOn: false)
+            .init(title: "Nulstil Indstillinger", type: .reset, opusType: nil, isSwitchOn: false)
         ]
     ]
     
@@ -92,7 +94,7 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
         
         // Fill array from opus array
         for item in opus {
-            data[0].append(SettingsItem(title: item.title, type: .onOffSwitch, opusType: item.type, switchIsOn: item.enabled))
+            data[0].append(Settings.SettingsItem(title: item.title, type: .onOffSwitch, opusType: item.type, isSwitchOn: item.enabled))
         }
     }
     
@@ -134,9 +136,9 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
             resetSettings()
         }
         
-        print("\n--opus, load in settings--")
+        debugPrint("\n--opus, load in settings--")
         for i in opus {
-            print("\(i.title): \(i.enabled)")
+            debugPrint("\(i.title): \(i.enabled)")
         }
     }
     
@@ -149,7 +151,7 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
         
         // Fill array from standard opus
         for item in standardOpus {
-            data[0].append(SettingsItem(title: item.title, type: .onOffSwitch, opusType: item.type, switchIsOn: item.enabled))
+            data[0].append(Settings.SettingsItem(title: item.title, type: .onOffSwitch, opusType: item.type, isSwitchOn: item.enabled))
         }
         
         // Reload
@@ -201,6 +203,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             self.router?.navigateToAboutMe()
         case .help:
             self.router?.navigateToHelp()
+        case .share:
+            <#code#>
+        case .review:
+            <#code#>
         }   
     }
     
@@ -244,12 +250,12 @@ extension SettingsViewController: SettingsCellDelegate {
     func didSwitch(isOn value: Bool, indexPath: IndexPath) {
         
         // Update local data array
-        guard let newState = data[indexPath.section][indexPath.row].switchIsOn else { return }
-        data[indexPath.section][indexPath.row].switchIsOn = !newState
+        guard let newState = data[indexPath.section][indexPath.row].isSwitchOn else { return }
+        data[indexPath.section][indexPath.row].isSwitchOn = !newState
         
-        print("\n--Local data, save--")
+        debugPrint("\n--Local data, save--")
         for i in data[indexPath.section] {
-            print("\(i.title): \(String(describing: i.switchIsOn))")
+            debugPrint("\(i.title): \(String(describing: i.isSwitchOn))")
         }
         
         // Update global opus Array
@@ -257,9 +263,9 @@ extension SettingsViewController: SettingsCellDelegate {
         guard let index = opus.firstIndex(where: { $0.type ==  item.opusType }) else { return }
         opus[index].enabled = !newState
         
-        print("\n--Opus data, save--")
+        debugPrint("\n--Opus data, save--")
         for i in opus {
-            print("\(i.title): \(i.enabled)")
+            debugPrint("\(i.title): \(i.enabled)")
         }
         
         // Save to disk

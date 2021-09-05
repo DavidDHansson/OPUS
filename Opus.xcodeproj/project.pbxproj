@@ -40,7 +40,6 @@
 		EB0B216924D063B90058B7DA /* PlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B216824D063B90058B7DA /* PlayerProtocol.swift */; };
 		EB0B216C24D063FB0058B7DA /* PlayerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B216B24D063FB0058B7DA /* PlayerModels.swift */; };
 		EB70518224D840FE00FD5DF2 /* SettingsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB70518124D840FE00FD5DF2 /* SettingsFooterView.swift */; };
-		EB8EB12924D57ABF00341F81 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8EB12424D57ABF00341F81 /* SettingsItem.swift */; };
 		EB8EB12A24D57ABF00341F81 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8EB12624D57ABF00341F81 /* SettingsCell.swift */; };
 		EB8EB12B24D57ABF00341F81 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8EB12824D57ABF00341F81 /* SettingsHeaderView.swift */; };
 		EB95DFA024D5823000D065F6 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB95DF9F24D5823000D065F6 /* UIImageView+Extensions.swift */; };
@@ -116,7 +115,6 @@
 		EB0B216824D063B90058B7DA /* PlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProtocol.swift; sourceTree = "<group>"; };
 		EB0B216B24D063FB0058B7DA /* PlayerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModels.swift; sourceTree = "<group>"; };
 		EB70518124D840FE00FD5DF2 /* SettingsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFooterView.swift; sourceTree = "<group>"; };
-		EB8EB12424D57ABF00341F81 /* SettingsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		EB8EB12624D57ABF00341F81 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		EB8EB12824D57ABF00341F81 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
 		EB95DF9F24D5823000D065F6 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
@@ -325,14 +323,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		EB8EB12324D57ABF00341F81 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				EB8EB12424D57ABF00341F81 /* SettingsItem.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		EB8EB12524D57ABF00341F81 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,7 +372,6 @@
 			children = (
 				EB8EB12524D57ABF00341F81 /* Cells */,
 				EB8EB12724D57ABF00341F81 /* Custom views */,
-				EB8EB12324D57ABF00341F81 /* Models */,
 				EBD4693424CE0BF500C1D885 /* SettingsPresenter.swift */,
 				EBD4693524CE0BF500C1D885 /* SettingsWorker.swift */,
 				EBD4693624CE0BF500C1D885 /* SettingsRouter.swift */,
@@ -570,7 +559,6 @@
 				EB0525E924CC71AF0065409A /* HomeRouter.swift in Sources */,
 				EB02F1D824D4379F00126731 /* TabBarRouter.swift in Sources */,
 				EBCA8C0924DEB84F00710AF2 /* DiceWorker.swift in Sources */,
-				EB8EB12924D57ABF00341F81 /* SettingsItem.swift in Sources */,
 				EBCA8C0A24DEB84F00710AF2 /* DiceRouter.swift in Sources */,
 				EB0B216924D063B90058B7DA /* PlayerProtocol.swift in Sources */,
 				EB0525FC24CC7D210065409A /* WelcomeViewController.swift in Sources */,
@@ -712,6 +700,7 @@
 			baseConfigurationReference = 2C72AA8D3EC82F69AB183254 /* Pods-Opus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8688MZ76AF;
@@ -724,6 +713,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "-hansson.Opus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -734,6 +724,7 @@
 			baseConfigurationReference = 2B0B6A1E46A809CB0C0DEF67 /* Pods-Opus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8688MZ76AF;
@@ -746,6 +737,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "-hansson.Opus";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
