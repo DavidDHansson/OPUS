@@ -44,8 +44,8 @@ struct OpusType: Codable {
 var opus = [OpusType]()
 
 let standardOpus = [
-    OpusType(title: "Normal", description: "Helt normal opus. Dog med en tilfældig drop de sidste 60 sekunder - for ekstra spænding. ", type: .normal, weight: 1, enabled: true),
-    OpusType(title: "Langsom", description: "Normal opbygning, dog hvor der i stedet for et drop kommer langsom musik, efterfyldt af opbygning også drop. Den langsomme del kan ske 2 gange i en sang", type: .slowPart, weight: 0.5, enabled: true),
-    OpusType(title: "Langsom med hurtig drop", description: "Normal opbygning, dog hvor der i stedet for et drop kommer langsom musik, efterfyldt af et pludseligt uventet drop. Den langsomme del kan ske 2 gange i en sang", type: .slowPartQuickDrop, weight: 0.4, enabled: true),
-    OpusType(title: "Hurtig", description: "Normal opbygning med pludselig uventet drop efter 20 - 40 sekunder ", type: .quickDrop, weight: 0.2, enabled: true)
+    OpusType(title: "Normal", description: "Normal Opus, med tilfældig \"drop\" de sidste 60 sekunder.", type: .normal, weight: 1, enabled: true),
+    OpusType(title: "Langsom", description: "Normal opbygning, med et \"langsomt bid\" efterfulgt af \"drop\". Dette kan ske maksimum 2 gange.", type: .slowPart, weight: 0.5, enabled: true),
+    OpusType(title: "Langsom med hurtig drop", description: "Normal opbygning, med et \"langsomt bid\" efterfulgt af \"drop\" uden opbygning. Dette kan ske maksimum 2 gange.", type: .slowPartQuickDrop, weight: 0.4, enabled: true),
+    OpusType(title: "Hurtig", description: "Normal opbygning med uventet \"drop\" efter 20 - 40 sekunder ", type: .quickDrop, weight: 0.2, enabled: true)
 ]
