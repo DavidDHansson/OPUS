@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 protocol SettingsDisplayLogic: AnyObject {
     func displaySomething(viewModel: Settings.Something.ViewModel)
@@ -16,7 +17,8 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
     var interactor: SettingsBusinessLogic?
     var router: (NSObjectProtocol & SettingsRoutingLogic & SettingsDataPassing)?
     
-    var data: [[Settings.SettingsItem]] = [
+    private var headerTitles = ["Opus", "Andet", "Nulstil"]
+    private var data: [[Settings.SettingsItem]] = [
         [],
         [
             .init(title: "Regler", type: .help, opusType: nil, isSwitchOn: false),
@@ -27,8 +29,6 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
             .init(title: "Nulstil Indstillinger", type: .reset, opusType: nil, isSwitchOn: false)
         ]
     ]
-    
-    var headerTitles = ["Opus", "Andet", "Nulstil"]
     
     public let tableView: UITableView = {
         let t = UITableView(frame: .zero, style: .insetGrouped)
@@ -204,9 +204,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         case .help:
             self.router?.navigateToHelp()
         case .share:
-            <#code#>
+            router?.routeToShareApp()
         case .review:
-            <#code#>
+            SKStoreReviewController.requestReview()
         }   
     }
     

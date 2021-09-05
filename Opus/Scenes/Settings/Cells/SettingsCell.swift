@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SettingsCellDelegate: class {
+protocol SettingsCellDelegate: AnyObject {
     func didSwitch(isOn value: Bool, indexPath: IndexPath)
 }
 
@@ -30,7 +30,7 @@ class SettingsCell: UITableViewCell {
         return s
     }()
     
-    var data: SettingsItem? {
+    var data: Settings.SettingsItem? {
         didSet {
             guard let item = data else { return }
             
@@ -45,11 +45,10 @@ class SettingsCell: UITableViewCell {
             case .reset:
                 titleLabel.textColor = .red
                 switchButtonWidthConstraint.constant = 0.0
-            case .aboutMe, .help:
+            default:
                 titleLabel.textColor = .black
                 switchButtonWidthConstraint.constant = 0.0
             }
-            
         }
     }
     

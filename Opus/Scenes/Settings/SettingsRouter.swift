@@ -12,6 +12,7 @@ protocol SettingsRoutingLogic {
     func navigateToHelp()
     func navigateToAboutMe()
     func navigateToInformation(with opus: OpusType)
+    func routeToShareApp()
 }
 
 protocol SettingsDataPassing {
@@ -51,6 +52,21 @@ class SettingsRouter: NSObject, SettingsRoutingLogic, SettingsDataPassing {
         let destination = PopupViewController(viewModel: viewModel)
         destination.modalPresentationStyle = .overCurrentContext
         self.viewController?.tabBarController?.present(destination, animated: true, completion: nil)
+    }
+    
+    func routeToShareApp() {
+        let firstActivityItem = "Hey, tjek OPUS appen ud. Appen har millioner forskellige variationer af sangen, som gør at man aldrig hører den samme sang 2 gange! EN must-have til hygge druk og fester"
+        let secondActivityItem: URL = URL(string: "https://apps.apple.com/us/app/opus/id1584135943#?platform=iphone")!
+
+        let activityViewController : UIActivityViewController = UIActivityViewController(
+            activityItems: [firstActivityItem, secondActivityItem], applicationActivities: nil)
+
+        // iPad stuff
+        activityViewController.popoverPresentationController?.sourceView = viewController?.view
+        activityViewController.popoverPresentationController?.permittedArrowDirections = .any
+        activityViewController.popoverPresentationController?.sourceRect = CGRect(x: 150, y: 150, width: 0, height: 0)
+
+        viewController?.present(activityViewController, animated: true, completion: nil)
     }
 
 }
