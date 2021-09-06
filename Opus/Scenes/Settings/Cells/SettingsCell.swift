@@ -40,6 +40,7 @@ class SettingsCell: UITableViewCell {
             switch item.type {
             case .onOffSwitch:
                 guard let state = item.isSwitchOn else { return }
+                titleLabel.textColor = .black
                 switchButton.isHidden = false
                 switchButton.isOn = state
             case .reset:
@@ -56,6 +57,8 @@ class SettingsCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        backgroundColor = .white
         
         // Add subviews
         contentView.addSubview(titleLabel)
