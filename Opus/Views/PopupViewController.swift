@@ -115,6 +115,9 @@ class PopupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Disable dark mode for view
+        overrideUserInterfaceStyle = .light
+        
         view.backgroundColor = .clear
         
         // Add Subview
